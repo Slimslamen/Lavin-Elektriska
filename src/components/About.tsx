@@ -3,9 +3,9 @@ import { Award, Users, Clock, Shield } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { icon: <Award className="w-6 h-6" />, number: "10+", label: "Års erfarenhet" },
-    { icon: <Users className="w-6 h-6" />, number: "1000+", label: "Nöjda kunder" },
-    { icon: <Shield className="w-6 h-6" />, number: "100%", label: "Auktoriserad & försäkrad" }
+    { icon: <Award className="w-7 h-7 text-white" />, number: "10+", label: "Års erfarenhet" },
+    { icon: <Users className="w-7 h-7 text-white" />, number: "1000+", label: "Nöjda kunder" },
+    { icon: <Shield className="w-7 h-7 text-white" />, number: "100%", label: "Auktoriserad & försäkrad" }
   ];
 
   return (
@@ -45,7 +45,7 @@ const About = () => {
               {stats.map((stat, index) => (
                 <div key={index} className="bg-gray-50 p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
                   <div className="w-12 h-12 bg-[#66BEF0] bg-opacity-10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <div className="text-[#66BEF0]">
+                    <div className="text-[#66BEF0] flex items-center justify-center">
                       {stat.icon}
                     </div>
                   </div>

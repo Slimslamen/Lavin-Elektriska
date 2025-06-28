@@ -4,19 +4,19 @@ import { Zap, Home, Building, Settings, AlertTriangle, Lightbulb } from 'lucide-
 const Services = () => {
   const services = [
     {
-      icon: <Home className="w-8 h-8" />,
+      icon: <Home className="w-8 h-8 text-white" />,
       title: "Elinstallationer",
       description: "Vi har till alla stora elinstallationer inte bara uppdatera säkringar utan även mer avancerade installationer för kommersiella behov.",
       bgImage: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2432&q=80"
     },
     {
-      icon: <Zap className="w-8 h-8" />,
+      icon: <Zap className="w-8 h-8 text-white" />,
       title: "Installation av laddstolpar",
       description: "Vi erbjuder komplett service installationer av laddstolpar, så att du kan ladda din elbil hemma på bästa sätt.",
       bgImage: "https://images.unsplash.com/photo-1527576539890-dfa815648363?ixlib=rb-4.0.3&auto=format&fit=crop&w=3994&q=80"
     },
     {
-      icon: <Settings className="w-8 h-8" />,
+      icon: <Settings className="w-8 h-8 text-white" />,
       title: "Felsökningar & reparationer",
       description: "Snabb och effektiv felsökning och reparation av elektriska problem för hem och företag.",
       bgImage: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=6000&q=80"
@@ -40,7 +40,7 @@ const Services = () => {
               {/* Text Content */}
               <div className={`bg-[#66BEF0] text-white p-12 flex items-center ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                 <div>
-                  <div className="w-16 h-16 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-[#22aeff] bg-opacity-20 rounded-lg flex items-center justify-center mb-6">
                     {service.icon}
                   </div>
                   <h3 className="text-3xl font-bold mb-6">{service.title}</h3>
