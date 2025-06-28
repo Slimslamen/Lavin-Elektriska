@@ -1,6 +1,11 @@
 import { Phone, MessageCircle, Calendar } from 'lucide-react';
+import { useState } from 'react';
+import Contact from './Contact';
 
 const CTA = () => {
+
+  const [showContact, setShowContact] = useState(true)
+
   return (
     <section className="py-20 bg-gradient-to-r from-[#66BEF0] to-[#4A90E2] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20" />
@@ -18,8 +23,8 @@ const CTA = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
             <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Phone className="w-8 h-8 text-white" />
             </div>
@@ -28,7 +33,7 @@ const CTA = () => {
             <button className="bg-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               +46729110256
             </button>
-          </div>
+          </div> */}
           
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
             <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -36,7 +41,7 @@ const CTA = () => {
             </div>
             <h3 className="text-xl font-bold text-white mb-3">Skicka meddelande</h3>
             <p className="text-blue-100 mb-4">Vi svarar inom 24 timmar</p>
-            <button className="bg-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button onClick={() => setShowContact(!showContact)}  className="bg-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Skicka e-post
             </button>
           </div>
@@ -52,6 +57,7 @@ const CTA = () => {
             </button>
           </div>
         </div>
+        <Contact showContent={showContact}/>
       </div>
     </section>
   );

@@ -20,24 +20,6 @@ const Gallery = () => {
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <Building className="w-5 h-5" />
     },
-    // {
-    //   title: "Villa - Komplett elinstallation",
-    //   category: "Bostäder",
-    //   image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    //   icon: <Home className="w-5 h-5" />
-    // },
-    // {
-    //   title: "Restaurang - LED-belysning",
-    //   category: "Kommersiellt",
-    //   image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    //   icon: <Building className="w-5 h-5" />
-    // },
-    // {
-    //   title: "Hemma-laddning BMW i3",
-    //   category: "Laddstolpar",
-    //   image: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    //   icon: <Zap className="w-5 h-5" />
-    // }
   ];
 
   return (

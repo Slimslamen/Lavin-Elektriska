@@ -1,15 +1,13 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
-const Contact = () => {
+const Contact = ({showContent}) => {
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className={`py-20 bg-white rounded-lg mt-20 transition-all duration-700 ease-in-out
+      ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 hidden"}
+      `}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to solve your electrical problems? Contact us today for a free estimate 
-            or emergency service.
-          </p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Kontakta oss</h2>
         </div>
         
         <div className="grid lg:grid-cols-1 gap-12">
@@ -67,11 +65,11 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="animate-fade-in">
             <form className="bg-gray-50 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Request a Quote</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Begär en offert</h3>
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Förnamn</label>
                   <input 
                     type="text" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
@@ -79,7 +77,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Efternamn</label>
                   <input 
                     type="text" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
@@ -98,7 +96,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
                   <input 
                     type="tel" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
@@ -108,9 +106,9 @@ const Contact = () => {
               </div>
               
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Service Needed</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Typ av arbete</label>
                 <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent">
-                  <option>Select a service</option>
+                  <option>Välj typ av tjänst</option>
                   <option>Residential Electrical</option>
                   <option>Commercial Electrical</option>
                   <option>Emergency Repair</option>
@@ -121,16 +119,16 @@ const Contact = () => {
               </div>
               
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Meddelande</label>
                 <textarea 
                   rows={4} 
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
-                  placeholder="Please describe your electrical needs..."
+                  placeholder="Beskriv ditt önskemål..."
                 ></textarea>
               </div>
               
               <button className="w-full bg-[#66BEF0] text-white py-3 rounded-lg font-semibold hover:bg-[#5aa8d4] transition-colors">
-                Send Message
+                Skicka meddelande
               </button>
             </form>
           </div>

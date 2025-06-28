@@ -36,7 +36,7 @@ const Services = () => {
         
         <div className="space-y-8">
           {services.map((service, index) => (
-            <div key={index} className={`grid lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl shadow-xl ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+            <div key={index} className={`grid lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-2 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
               {/* Text Content */}
               <div className={`bg-[#66BEF0] text-white p-12 flex items-center ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                 <div>

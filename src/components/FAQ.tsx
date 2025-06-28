@@ -54,9 +54,9 @@ const FAQ = () => {
                 </h3>
                 <div className="w-8 h-8 bg-[#66BEF0] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0 ml-4">
                   {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-[#66BEF0]" />
+                    <Minus className="w-5 h-5 text-white" />
                   ) : (
-                    <Plus className="w-5 h-5 text-[#66BEF0]" />
+                    <Plus className="w-5 h-5 text-white" />
                   )}
                 </div>
               </button>
