@@ -114,7 +114,7 @@ const Blog = () => {
                     {post.excerpt}
                   </p>
                   
-                  <button className="flex items-center gap-2 text-[#66BEF0] font-semibold hover:text-[#5aa8d4] transition-colors">
+                  <button className="flex items-center gap-2 text-white font-semibold transition-colors">
                     Läs mer
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -124,7 +124,6 @@ const Blog = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

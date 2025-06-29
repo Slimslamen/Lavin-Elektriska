@@ -52,11 +52,11 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="group bg-gradient-to-r from-[#66BEF0] to-[#4A90E2] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-[#5aa8d4] hover:to-[#3A7BD5] transition-all duration-300 transform hover:scale-95 hover:shadow-xl flex items-center justify-center gap-2">
+              {/* <button className="group bg-gradient-to-r from-[#66BEF0] to-[#4A90E2] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-[#5aa8d4] hover:to-[#3A7BD5] transition-all duration-300 transform hover:scale-95 hover:shadow-xl flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
                 Ring nu: +46729110256
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </button> */}
               <button className="border-2 border-[#66BEF0] text-white bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl text-lg font-semibold hover:bg-[#66BEF0] hover:text-white transform hover:scale-95 transition-all duration-300 hover:shadow-lg">
                 Gratis offert
               </button>

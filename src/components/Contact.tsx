@@ -1,6 +1,13 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = ({showContent}) => {
+  const [state, handleSubmit] = useForm("xrbkjgpz");
+  if (state.succeeded) {
+    <div className='py-20 bg-white rounded-lg mt-20'>
+      return <h2 className='text-4xl font-bold text-gray-900 '>Tack för din mail</h2>;
+    </div>
+  }
+
   return (
     <section id="contact" className={`py-20 bg-white rounded-lg mt-20 transition-all duration-700 ease-in-out
       ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 hidden"}
@@ -64,35 +71,41 @@ const Contact = ({showContent}) => {
           
           {/* Contact Form */}
           <div className="animate-fade-in">
-            <form className="bg-gray-50 p-8 rounded-xl">
+            <form onSubmit={handleSubmit} className="bg-gray-50 p-8 rounded-xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Begär en offert</h3>
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Förnamn</label>
                   <input 
-                    type="text" 
+                    required
+                    type='text' 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
-                    placeholder="John"
+                    placeholder="Stefan"
+                    name='firstname'
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Efternamn</label>
-                  <input 
+                  <input
+                    required
                     type="text" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
-                    placeholder="Doe"
+                    placeholder="Magnusson"
+                    name='lastname'
                   />
                 </div>
               </div>
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <input 
+                    required
                     type="email" 
+                    id='email'
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
-                    placeholder="john@example.com"
+                    placeholder="Stefan@Lavinelektirksa.com"
                   />
                 </div>
                 <div>
@@ -100,12 +113,10 @@ const Contact = ({showContent}) => {
                   <input 
                     type="tel" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
-                    placeholder="(555) 123-4567"
                   />
                 </div>
               </div>
-              
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Typ av arbete</label>
                 <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent">
                   <option>Välj typ av tjänst</option>
@@ -116,18 +127,21 @@ const Contact = ({showContent}) => {
                   <option>Lighting Installation</option>
                   <option>Electrical Inspection</option>
                 </select>
-              </div>
-              
+              </div> */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Meddelande</label>
                 <textarea 
+                  required
                   rows={4} 
+                  maxLength={400}
+                  name='message'
+                  id='message'
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
                   placeholder="Beskriv ditt önskemål..."
                 ></textarea>
               </div>
               
-              <button className="w-full bg-[#66BEF0] text-white py-3 rounded-lg font-semibold hover:bg-[#5aa8d4] transition-colors">
+              <button disabled={state.submitting} type='submit' className="w-full bg-[#66BEF0] text-white py-3 rounded-lg font-semibold hover:bg-[#5aa8d4] transition-colors">
                 Skicka meddelande
               </button>
             </form>

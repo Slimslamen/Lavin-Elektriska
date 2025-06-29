@@ -23,7 +23,7 @@ const Header = () => {
               <a href="#services" className="text-gray-900 hover:text-[#66BEF0] transition-colors">Tjänster</a>
               <a href="#about" className="text-gray-900 hover:text-[#66BEF0] transition-colors">Erfarenhet</a>
               <a href="#FAQ" className="text-gray-900 hover:text-[#66BEF0] transition-colors">FAQ</a>
-              <a href="#contact" className="text-gray-900 hover:text-[#66BEF0] transition-colors">Kontakt</a>
+              <a href="#CTA" className="text-gray-900 hover:text-[#66BEF0] transition-colors">Kontakt</a>
               <Link to="/Blog" id='#blogbtn' className=" hover:text-gray-900 text-[#66BEF0] transition-colors">Blog</Link>
               {/* <button className="bg-[#66BEF0] text-white px-6 py-2 rounded-lg hover:bg-[#5aa8d4] transition-colors">
                 Offert

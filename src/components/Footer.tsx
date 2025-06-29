@@ -1,5 +1,8 @@
-
-import { Phone, Mail, MapPin, Youtube, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { FaInstagram, FaPhoneAlt, FaYoutube } from 'react-icons/fa';
+import { IoMdMail } from 'react-icons/io';
+import { IoLocationSharp } from 'react-icons/io5';
+import { SlSocialLinkedin } from 'react-icons/sl';
+import { TfiFacebook } from 'react-icons/tfi';
 import { Link } from 'react-router-dom';
 
 
@@ -39,15 +42,15 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Kontaktinfo</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#66BEF0]" />
+                <FaPhoneAlt className="w-5 h-5 text-[#66BEF0]" />
                 <span className="text-gray-400">+46729110256</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#66BEF0]" />
+                <IoMdMail className="w-5 h-5 text-[#66BEF0]" />
                 <span className="text-gray-400">Le@lavinelektriska.se</span>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-[#66BEF0]" />
+                <IoLocationSharp className="w-5 h-5 text-[#66BEF0]" />
                 <span className="text-gray-400">Olskrokstorget, 41665 Göteborg</span>
               </div>
             </div>
@@ -56,17 +59,17 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Följ oss</h4>
             <div className="flex gap-4 mb-6">
-              <a href="#" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
-                <Youtube className="w-5 h-5" />
+              {/* <a href="#" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
+                <FaYoutube className="w-5 h-5" />
+              </a> */}
+              <a href="https://www.instagram.com/lavinelektriska/?igsh=Yjk4YzhqYWx5ZXoz#" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
+                <FaInstagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a href="https://www.facebook.com/people/Lavin-Elektriska/61555416595421/" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
+                <TfiFacebook  className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://www.linkedin.com/company/lavin-elektriska/about/" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
+                <SlSocialLinkedin  className="w-5 h-5" />
               </a>
             </div>
             
