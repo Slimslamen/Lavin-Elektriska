@@ -10,8 +10,8 @@ const Header = () => {
         <nav className="py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[#66BEF0] mt-2 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl text-center">LE</span>
+              <div className="w-20 h-20 mt-2 rounded-lg flex items-center justify-center">
+                <img src="src\assets\Lavin ElektriskaBG.png" alt="Logo" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Lavin Elektriska</h1>

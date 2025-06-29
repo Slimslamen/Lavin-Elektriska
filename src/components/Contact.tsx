@@ -2,10 +2,12 @@ import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = ({showContent}) => {
   const [state, handleSubmit] = useForm("xrbkjgpz");
-  if (state.succeeded) {
-    <div className='py-20 bg-white rounded-lg mt-20'>
-      return <h2 className='text-4xl font-bold text-gray-900 '>Tack för din mail</h2>;
-    </div>
+  if (state.succeeded && showContent) {
+    return (
+      <div className='py-10 bg-white rounded-lg mt-20 text-center'>
+        <h2 className='text-3xl font-bold text-gray-900 '>Vi återkopplar så snart som möjligt!</h2>
+      </div>
+    )
   }
 
   return (
@@ -104,14 +106,21 @@ const Contact = ({showContent}) => {
                     required
                     type="email" 
                     id='email'
+                    name='email'
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
                     placeholder="Stefan@Lavinelektirksa.com"
                   />
+                    <ValidationError 
+                      prefix="Email" 
+                      field="email"
+                      errors={state.errors}
+                    />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
                   <input 
-                    type="tel" 
+                    type="tel"
+                    name='phone'
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
                   />
                 </div>

@@ -93,7 +93,7 @@ const Policy = () => {
                   <div className="bg-gray-50 p-4 rounded-lg mt-4">
                     <p className="text-gray-700"><strong>E-post:</strong> Le@lavinelektriska.se</p>
                     <p className="text-gray-700"><strong>Telefon:</strong> +46729110256</p>
-                    <p className="text-gray-700"><strong>Adress:</strong> Olskrokstorget, 41665 Göteborg</p>
+                    {/* <p className="text-gray-700"><strong>Adress:</strong> Olskrokstorget, 41665 Göteborg</p> */}
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@ const Policy = () => {
 
             <div className="mt-12 p-6 bg-[#66BEF0]/10 rounded-lg">
               <p className="text-sm text-gray-600 text-center">
-                Senast uppdaterad: 15 juni 2024
+                Senast uppdaterad: 29 juni 2025
               </p>
             </div>
           </div>

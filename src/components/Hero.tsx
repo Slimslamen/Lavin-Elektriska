@@ -24,9 +24,9 @@ const Hero = () => {
           <div className="animate-fade-in text-white">
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#66BEF0] to-[#4A90E2] rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-2xl text-center">LE</span>
-                </div>
+                  <div className="w-50 mt-2 rounded-lg flex items-center justify-center">
+                      <img src="src\assets\Lavin_Elektriska.png" alt="Logo" />
+                  </div>
                 <div>
                   <span className="text-2xl font-bold">Lavin Elektriska</span>
                   <p className="text-blue-200 text-sm">Din pålitliga elpartner</p>

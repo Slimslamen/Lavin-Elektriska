@@ -73,15 +73,16 @@ const Footer = () => {
               </a>
             </div>
             
-            <div className="text-center">
-              <div className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold mb-2 inline-block">
+            <div className="text-center flex flex-row items-center justify-center md:ml-[-10px]">
+              <img src="src\assets\Elsäkerhetsverket.png" alt="elsäkerhetsverket" className='w-10 h-10' />
+              <div className="bg-orange-500 text-white py-1 rounded-full text-sm font-semibold inline-block">
                 Godkända av: ELSÄKERHETSVERKET
               </div>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row md:justify-between justify-center text-center items-center">
           <p className="text-gray-400 text-center md:text-left">
             ©2024 Lavin Elektriska AB.
           </p>

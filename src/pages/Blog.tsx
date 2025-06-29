@@ -2,13 +2,19 @@
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import SecondHeader from '../components/SeconHeader';
 import Footer from '../components/Footer';
+import { useState } from 'react';
+import BlogModal from '../components/BlogModal';
 
 const Blog = () => {
+
+  const [showModal, setShowModal] = useState(false)
+
   const blogPosts = [
     {
       id: 1,
       title: "5 Vanliga Elektriska Problem i Hemmet och Hur Du Undviker Dem",
       excerpt: "Lär dig om de mest vanliga elektriska problemen som kan uppstå i ditt hem och hur du kan förebygga dem för att säkerställa din familjs säkerhet.",
+      content: "Lång text!",
       author: "Lavin Elektriska",
       date: "2024-06-15",
       image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -18,47 +24,22 @@ const Blog = () => {
       id: 2,
       title: "Energieffektiva Lösningar för Ditt Hem",
       excerpt: "Upptäck hur du kan minska dina elräkningar och bidra till miljön genom att uppgradera till energieffektiva elektriska lösningar.",
+      content: "Lång text!",
       author: "Lavin Elektriska",
       date: "2024-06-10",
       image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       category: "Energibesparing"
     },
-    {
-      id: 3,
-      title: "Guide till Laddstolpar för Elbilar",
-      excerpt: "Allt du behöver veta om installation av laddstolpar hemma - från val av rätt modell till installationsprocessen.",
-      author: "Lavin Elektriska",
-      date: "2024-06-05",
-      image: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Elbilar"
-    },
-    {
-      id: 4,
-      title: "Smart Home-teknologi: Framtiden är Här",
-      excerpt: "Utforska de senaste trenderna inom smart home-teknologi och hur de kan förbättra ditt hem och din livsstil.",
-      author: "Lavin Elektriska",
-      date: "2024-05-28",
-      image: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Smart Home"
-    },
-    {
-      id: 5,
-      title: "Säkerhetsinspektion av Ditt Hem - Varför Det Är Viktigt",
-      excerpt: "Förstå vikten av regelbundna säkerhetsinspektioner och vad du kan förvänta dig under en professionell elinspektion.",
-      author: "Lavin Elektriska",
-      date: "2024-05-20",
-      image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Inspektion"
-    },
-    {
-      id: 6,
-      title: "LED-belysning: Fördelar och Installationstips",
-      excerpt: "Lär dig om fördelarna med LED-belysning och få professionella tips för att uppgradera ditt hems belysningssystem.",
-      author: "Lavin Elektriska",
-      date: "2024-05-15",
-      image: "https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Belysning"
-    }
+    // {
+    //   id: 3,
+    //   title: "Guide till Laddstolpar för Elbilar",
+    //   excerpt: "Allt du behöver veta om installation av laddstolpar hemma - från val av rätt modell till installationsprocessen.",
+    //   content: "Lång text!",
+    //   author: "Lavin Elektriska",
+    //   date: "2024-06-05",
+    //   image: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    //   category: "Elbilar"
+    // },
   ];
 
   return (
@@ -68,15 +49,15 @@ const Blog = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#66BEF0] to-[#4A90E2] py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold text-white mb-6">Elektriska Tips & Råd</h1>
+          <h1 className="text-5xl font-bold text-white mb-6">Genomförda Arbeten</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Håll dig uppdaterad med de senaste nyheterna, tips och råd från våra experter inom el och elektronik.
+            Utforska våra projekt. Elteknik med precision och passion.
           </p>
         </div>
       </section>
 
       {/* Blog Posts */}
-      <section className="py-20">
+      <section id='blogPage' className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
@@ -114,11 +95,16 @@ const Blog = () => {
                     {post.excerpt}
                   </p>
                   
-                  <button className="flex items-center gap-2 text-white font-semibold transition-colors">
+                  <button onClick={() => setShowModal(!showModal)} className="flex items-center gap-2 text-white font-semibold transition-colors">
                     Läs mer
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
+                {showModal === true ? (
+                    <BlogModal openBlogModal={showModal} post={post} />
+                  ) : (
+                      <div className='hidden'></div>
+                  )}
               </article>
             ))}
           </div>
