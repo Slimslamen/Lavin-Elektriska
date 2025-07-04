@@ -87,6 +87,7 @@ const Contact = ({showContent}) => {
                     name='firstname'
                   />
                 </div>
+                <input type="text" name='_spamRobot' style={{display:'none'}} />
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Efternamn</label>
                   <input
