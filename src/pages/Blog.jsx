@@ -1,13 +1,14 @@
-
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import SecondHeader from '../components/SeconHeader';
 import Footer from '../components/Footer';
-import { useState } from 'react';
+import { useContext } from 'react';
 import BlogModal from '../components/BlogModal';
+import { BlogContext } from '../Context/BlogContext'
 
 const Blog = () => {
+  const BContext = useContext(BlogContext)
 
-  const [showModal, setShowModal] = useState(false)
+  const { openBlogModal, setOpenBlogModal } = BContext;
 
   const blogPosts = [
     {
@@ -30,16 +31,7 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       category: "Energibesparing"
     },
-    // {
-    //   id: 3,
-    //   title: "Guide till Laddstolpar för Elbilar",
-    //   excerpt: "Allt du behöver veta om installation av laddstolpar hemma - från val av rätt modell till installationsprocessen.",
-    //   content: "Lång text!",
-    //   author: "Lavin Elektriska",
-    //   date: "2024-06-05",
-    //   image: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    //   category: "Elbilar"
-    // },
+
   ];
 
   return (
@@ -95,13 +87,13 @@ const Blog = () => {
                     {post.excerpt}
                   </p>
                   
-                  <button onClick={() => setShowModal(!showModal)} className="flex items-center gap-2 text-white font-semibold transition-colors">
+                  <button onClick={() => setOpenBlogModal(!openBlogModal)} className="flex items-center gap-2 text-white font-semibold transition-colors">
                     Läs mer
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
-                {showModal === true ? (
-                    <BlogModal openBlogModal={showModal} post={post} />
+                {openBlogModal === true ? (
+                    <BlogModal openBlogModal={openBlogModal} post={post} />
                   ) : (
                       <div className='hidden'></div>
                   )}

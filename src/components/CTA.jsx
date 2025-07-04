@@ -62,7 +62,7 @@ const CTA = () => {
                 * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
                 * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
                 */
-                rootElement={document.getElementById("root") as HTMLElement}  
+                rootElement={document.getElementById("root")}  
                 text="Boka nu"
                 className='bg-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors'
               />
