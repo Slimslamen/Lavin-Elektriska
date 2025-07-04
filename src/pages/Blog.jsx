@@ -8,13 +8,13 @@ import { BlogContext } from '../Context/BlogContext'
 const Blog = () => {
   const BContext = useContext(BlogContext)
 
-  const { openBlogModal, setOpenBlogModal } = BContext;
+  const { openBlogModal, setOpenBlogModal, setSelectedPost, selectedPost } = BContext;
 
   const blogPosts = [
     {
       id: 1,
       title: "5 Vanliga Elektriska Problem i Hemmet och Hur Du Undviker Dem",
-      excerpt: "Lär dig om de mest vanliga elektriska problemen som kan uppstå i ditt hem och hur du kan förebygga dem för att säkerställa din familjs säkerhet.",
+      miniContent: "Lär dig om de mest vanliga elektriska problemen som kan uppstå i ditt hem och hur du kan förebygga dem för att säkerställa din familjs säkerhet.",
       content: "Lång text!",
       author: "Lavin Elektriska",
       date: "2024-06-15",
@@ -24,7 +24,7 @@ const Blog = () => {
     {
       id: 2,
       title: "Energieffektiva Lösningar för Ditt Hem",
-      excerpt: "Upptäck hur du kan minska dina elräkningar och bidra till miljön genom att uppgradera till energieffektiva elektriska lösningar.",
+      miniContent: "Upptäck hur du kan minska dina elräkningar och bidra till miljön genom att uppgradera till energieffektiva elektriska lösningar.",
       content: "Lång text!",
       author: "Lavin Elektriska",
       date: "2024-06-10",
@@ -33,6 +33,12 @@ const Blog = () => {
     },
 
   ];
+
+  const ChosenBlog = (post) => {
+    setOpenBlogModal(true)
+
+    setSelectedPost(post.id)
+  }
 
   return (
     <div className="min-h-screen">
@@ -68,7 +74,7 @@ const Blog = () => {
                 </div>
                 
                 <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                  {/* <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       <span>{new Date(post.date).toLocaleDateString('sv-SE')}</span>
@@ -77,22 +83,22 @@ const Blog = () => {
                       <User className="w-4 h-4" />
                       <span>{post.author}</span>
                     </div>
-                  </div>
+                  </div> */}
                   
                   <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
                     {post.title}
                   </h2>
                   
                   <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
+                    {post.miniContent}
                   </p>
                   
-                  <button onClick={() => setOpenBlogModal(!openBlogModal)} className="flex items-center gap-2 text-white font-semibold transition-colors">
+                  <button onClick={() => ChosenBlog(post)} className="flex items-center gap-2 text-white font-semibold transition-colors">
                     Läs mer
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
-                {openBlogModal === true ? (
+                {openBlogModal === true && post.id === selectedPost ? (
                     <BlogModal openBlogModal={openBlogModal} post={post} />
                   ) : (
                       <div className='hidden'></div>

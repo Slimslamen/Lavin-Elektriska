@@ -27,6 +27,7 @@ export function BlogProvider({ children }) {
         addPost, 
         removePost, 
         selectedPost, 
+        setSelectedPost,
         selectPost, 
         openBlogModal, 
         closeBlogModal,
