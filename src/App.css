@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@plugin "flowbite-react/plugin/tailwindcss";
-@source "../.flowbite-react/class-list.json";
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
