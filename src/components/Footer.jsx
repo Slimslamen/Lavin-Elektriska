@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white py-12" role="contentinfo" aria-label="Sidfot">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <a href="/" className="flex items-center gap-2 mb-4">
+            <a href="/" className="flex items-center gap-2 mb-4" aria-label="Startsida">
               <div className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl text-center">LE</span>
+                <span className="text-white font-bold text-xl text-center" aria-hidden="true">LE</span>
               </div>
               <div>
                 <h3 className="text-xl font-bold">Lavin Elektriska</h3>
@@ -42,11 +42,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Kontaktinfo</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <FaPhoneAlt className="w-5 h-5 text-[#66BEF0]" />
+                <FaPhoneAlt className="w-5 h-5 text-[#66BEF0]" aria-hidden="true" />
                 <span className="text-gray-400">+46729110256</span>
               </div>
               <div className="flex items-center gap-3">
-                <IoMdMail className="w-5 h-5 text-[#66BEF0]" />
+                <IoMdMail className="w-5 h-5 text-[#66BEF0]" aria-hidden="true" />
                 <span className="text-gray-400">Le@lavinelektriska.se</span>
               </div>
               {/* <div className="flex items-center gap-3">
@@ -59,22 +59,19 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Följ oss</h4>
             <div className="flex gap-4 mb-6">
-              {/* <a href="#" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
-                <FaYoutube className="w-5 h-5" />
-              </a> */}
-              <a href="https://www.instagram.com/lavinelektriska/?igsh=Yjk4YzhqYWx5ZXoz#" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
-                <FaInstagram className="w-5 h-5" />
+              <a href="https://www.instagram.com/lavinelektriska/?igsh=Yjk4YzhqYWx5ZXoz#" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
+                <FaInstagram className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="https://www.facebook.com/people/Lavin-Elektriska/61555416595421/" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
-                <TfiFacebook  className="w-5 h-5" />
+              <a href="https://www.facebook.com/people/Lavin-Elektriska/61555416595421/" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
+                <TfiFacebook  className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="https://www.linkedin.com/company/lavin-elektriska/about/" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors">
-                <SlSocialLinkedin  className="w-5 h-5" />
+              <a href="https://www.linkedin.com/company/lavin-elektriska/about/" className="w-10 h-10 bg-[#66BEF0] rounded-lg flex items-center justify-center hover:bg-[#5aa8d4] transition-colors" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">
+                <SlSocialLinkedin  className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
             
             <div className="text-center flex flex-row items-center justify-center md:ml-[-10px]">
-              <img src="/Images/Elsäkerhetsverket.png" alt="Elsäkerhetsverket" className='w-10 h-10' />
+              <img src="/Images/Elsäkerhetsverket.png" alt="Elsäkerhetsverket logotyp" className='w-10 h-10' />
               <div className="bg-orange-500 text-white py-1 rounded-full text-sm font-semibold inline-block">
                 Godkända av: ELSÄKERHETSVERKET
               </div>
@@ -87,7 +84,7 @@ const Footer = () => {
             ©2024 Lavin Elektriska AB.
           </p>
           <div className="mt-4 md:mt-0">
-            <Link to="/Policy" className="text-gray-400 hover:text-[#66BEF0] transition-colors">
+            <Link to="/Policy" className="text-gray-400 hover:text-[#66BEF0] transition-colors" aria-label="Sekretesspolicy">
               Sekretesspolicy
             </Link>
           </div>

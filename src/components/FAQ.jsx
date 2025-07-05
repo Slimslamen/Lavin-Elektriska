@@ -1,4 +1,3 @@
-
 import { Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
 
@@ -33,7 +32,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50" id='FAQ'>
+    <section className="py-20 bg-gray-50" id='FAQ' aria-label="Vanliga frågor">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Vanliga frågor</h2>
@@ -41,31 +40,30 @@ const FAQ = () => {
             Här hittar du svar på de mest vanliga frågorna om våra tjänster.
           </p>
         </div>
-
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto" role="list">
           {faqs.map((faq, index) => (
-            <div key={index} className="mb-4">
+            <div key={index} className="mb-4" role="listitem">
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-left flex items-center justify-between group"
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-panel-${index}`}
+                id={`faq-button-${index}`}
               >
                 <h3 className="text-lg font-semibold text-white transition-colors">
                   {faq.question}
                 </h3>
-                <div className="w-8 h-8 bg-[#66BEF0] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0 ml-4">
+                <div className="w-8 h-8 bg-[#66BEF0] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0 ml-4" aria-hidden="true">
                   {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-white" />
+                    <Minus className="w-5 h-5 text-white" aria-hidden="true" />
                   ) : (
-                    <Plus className="w-5 h-5 text-white" />
+                    <Plus className="w-5 h-5 text-white" aria-hidden="true" />
                   )}
                 </div>
               </button>
-              
               {openIndex === index && (
-                <div className="bg-white mt-2 p-6 rounded-xl shadow-sm animate-fade-in">
-                  <p className="text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
+                <div id={`faq-panel-${index}`} role="region" aria-labelledby={`faq-button-${index}`} className="bg-white p-6 rounded-b-xl shadow-inner text-gray-700">
+                  {faq.answer}
                 </div>
               )}
             </div>

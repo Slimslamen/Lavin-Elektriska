@@ -24,7 +24,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" aria-label="Projektgalleri">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Våra senaste projekt</h2>
@@ -44,19 +44,19 @@ const Gallery = () => {
                 />
               </div>
               
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
               
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-8 h-8 bg-[#66BEF0] rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-[#66BEF0] rounded-lg flex items-center justify-center" aria-hidden="true">
                     {project.icon}
                   </div>
                   <span className="text-sm font-medium text-[#66BEF0]">{project.category}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <button className="flex items-center gap-2 text-white md:hover:scale-95 transition-colors">
+                <button className="flex items-center gap-2 text-white md:hover:scale-95 transition-colors" aria-label={`Se mer om ${project.title}`}>
                   <Link to="/Blog">Se mer</Link>
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-4 h-4" aria-hidden="true" />
                 </button>
               </div>
             </div>

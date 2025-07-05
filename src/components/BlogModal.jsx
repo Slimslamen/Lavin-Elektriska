@@ -25,6 +25,8 @@ function closeModalfunction() {
         onClose={closeModalfunction}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        aria-modal="true"
+        role="dialog"
       >
         <Box
           sx={{
@@ -44,7 +46,7 @@ function closeModalfunction() {
           <Box sx={{ position: 'relative' }}>
             <img
               src={post.image}
-              alt={post.title}
+              alt={post.title + ' - bloggbild'}
               style={{
                 width: '100%',
                 height: '250px',
@@ -63,6 +65,8 @@ function closeModalfunction() {
                 color: 'white',
                 fontWeight: 'bold',
               }}
+              role="note"
+              aria-label={post.category}
             />
             <Button
               onClick={closeModalfunction}
@@ -83,6 +87,7 @@ function closeModalfunction() {
                   backgroundColor: '#ccc',
                 },
               }}
+              aria-label="Stäng modal"
             >
               X
             </Button>

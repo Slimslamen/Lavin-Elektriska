@@ -55,11 +55,11 @@ const Blog = () => {
       </section>
 
       {/* Blog Posts */}
-      <section id='blogPage' className="py-20">
+      <section id='blogPage' className="py-20" aria-label="Blogginlägg">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <article key={post.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2" aria-labelledby={`blog-title-${post.id}`}> 
                 <div className="relative">
                   <img 
                     src={post.image} 
@@ -67,12 +67,11 @@ const Blog = () => {
                     className="w-full h-48 object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-[#66BEF0] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-[#66BEF0] text-white px-3 py-1 rounded-full text-sm font-semibold" role="note" aria-label={post.category}>
                       {post.category}
                     </span>
                   </div>
                 </div>
-                
                 <div className="p-6">
                   {/* <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                     <div className="flex items-center gap-1">
@@ -84,24 +83,21 @@ const Blog = () => {
                       <span>{post.author}</span>
                     </div>
                   </div> */}
-                  
-                  <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                  <h2 id={`blog-title-${post.id}`} className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
                     {post.title}
                   </h2>
-                  
                   <p className="text-gray-600 mb-4 line-clamp-3">
                     {post.miniContent}
                   </p>
-                  
-                  <button onClick={() => ChosenBlog(post)} className="flex items-center gap-2 text-white font-semibold transition-colors">
+                  <button onClick={() => ChosenBlog(post)} className="flex items-center gap-2 text-white font-semibold transition-colors" aria-label={`Läs mer om ${post.title}`}> 
                     Läs mer
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </button>
                 </div>
                 {openBlogModal === true && post.id === selectedPost ? (
                     <BlogModal openBlogModal={openBlogModal} post={post} />
                   ) : (
-                      <div className='hidden'></div>
+                      <div className='hidden' aria-hidden="true"></div>
                   )}
               </article>
             ))}

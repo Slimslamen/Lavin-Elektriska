@@ -13,7 +13,7 @@ const Contact = ({showContent}) => {
   return (
     <section id="contact" className={`py-20 bg-white rounded-lg mt-20 transition-all duration-700 ease-in-out
       ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 hidden"}
-      `}>
+      `} aria-label="Kontaktformulär">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Kontakta oss</h2>
@@ -73,9 +73,7 @@ const Contact = ({showContent}) => {
           
           {/* Contact Form */}
           <div className="animate-fade-in">
-            <form onSubmit={handleSubmit} className="bg-gray-50 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Begär en offert</h3>
-              
+            <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto" aria-label="Kontaktformulär">
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Förnamn</label>
@@ -110,6 +108,8 @@ const Contact = ({showContent}) => {
                     name='email'
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
                     placeholder="Stefan@Lavinelektirksa.com"
+                    aria-required="true"
+                    aria-label="E-postadress"
                   />
                     <ValidationError 
                       prefix="Email" 
@@ -148,10 +148,12 @@ const Contact = ({showContent}) => {
                   id='message'
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent"
                   placeholder="Beskriv ditt önskemål..."
+                  aria-required="true"
+                  aria-label="Meddelande"
                 ></textarea>
               </div>
               
-              <button disabled={state.submitting} type='submit' className="w-full bg-[#66BEF0] text-white py-3 rounded-lg font-semibold hover:bg-[#5aa8d4] transition-colors">
+              <button disabled={state.submitting} type='submit' className="w-full bg-[#66BEF0] text-white py-3 rounded-lg font-semibold hover:bg-[#5aa8d4] transition-colors" aria-label="Skicka meddelande">
                 Skicka meddelande
               </button>
             </form>
