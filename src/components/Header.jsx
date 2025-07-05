@@ -11,7 +11,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-20 h-20 mt-2 rounded-lg flex items-center justify-center">
-                <img src="public\Lavin_ElektriskaBG.png" alt="Logo" />
+                <img src="/Images/Lavin_ElektriskaBG.png" alt="Logo" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Lavin Elektriska</h1>

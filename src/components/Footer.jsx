@@ -74,7 +74,7 @@ const Footer = () => {
             </div>
             
             <div className="text-center flex flex-row items-center justify-center md:ml-[-10px]">
-              <img src="public\Elsäkerhetsverket.png" alt="Elsäkerhetsverket" className='w-10 h-10' />
+              <img src="/Images/Elsäkerhetsverket.png" alt="Elsäkerhetsverket" className='w-10 h-10' />
               <div className="bg-orange-500 text-white py-1 rounded-full text-sm font-semibold inline-block">
                 Godkända av: ELSÄKERHETSVERKET
               </div>
