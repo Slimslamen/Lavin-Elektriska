@@ -25,7 +25,7 @@ const Hero = () => {
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-6">
                   <div className="w-50 mt-2 rounded-lg flex items-center justify-center">
-                      <img src="src\assets\Lavin_Elektriska.png" alt="Logo" />
+                      <img src="public\Lavin_Elektriska.png" alt="Logo" />
                   </div>
                 <div>
                   <span className="text-2xl font-bold">Lavin Elektriska</span>
