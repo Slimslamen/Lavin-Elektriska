@@ -72,7 +72,7 @@ const Hero = () => {
           
           {/* Stats/Features Card */}
           <div className="animate-fade-in lg:block hidden">
-            <div className="bg-white/10 backdrop-blur-[10px] p-8 rounded-2xl border border-white/20 shadow-2xl" aria-label="Varför välja oss?">
+            <div className="bg-white/10 backdrop-blur-2xl p-8 rounded-2xl border border-white/20 shadow-2xl" aria-label="Varför välja oss?">
               <h3 className="text-2xl font-bold text-white mb-6">Varför välja oss?</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
