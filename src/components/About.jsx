@@ -2,8 +2,8 @@ import { Award, Users, Clock, Shield } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { icon: <Award className="w-7 h-7 text-white" />, number: "10+", label: "Års erfarenhet" },
-    { icon: <Users className="w-7 h-7 text-white" />, number: "1000+", label: "Nöjda kunder" },
+    { icon: <Award className="w-7 h-7 text-white" />, number: "12+", label: "Års erfarenhet" },
+    // { icon: <Users className="w-7 h-7 text-white" />, number: "1000+", label: "Nöjda kunder" },
     { icon: <Shield className="w-7 h-7 text-white" />, number: "100%", label: "Auktoriserad & försäkrad" }
   ];
 
@@ -14,27 +14,25 @@ const About = () => {
           <div className="animate-fade-in">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Om Lavin Elektriska</h2>
             <p className="text-lg text-gray-600 mb-6">
-              Med över 10 års erfarenhet av att betjäna samhället har Lavin Elektriska 
-              byggt upp ett rykte för pålitliga, professionella elektriska tjänster. 
-              Vårt team av auktoriserade elektriker är engagerade i att tillhandahålla 
-              säkra, kodkompatibla lösningar för alla dina elektriska behov.
+           Lavin Elektriska grundades i Småland och har idag sin bas i Västra Götaland. 
+           Med över lång erfarenhet i branschen har vi byggt upp ett starkt rykte för att leverera trygga, 
+           professionella elinstallationer, alltid med fokus på kvalitet och noggrannhet.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              Vi är stolta över transparent prissättning, kvalitetsarbete och exceptionell 
-              kundservice. Oavsett om det är en enkel uttag installation eller en komplett 
-              uppgradering av elcentral, behandlar vi varje jobb med samma nivå av 
-              professionalism och uppmärksamhet på detaljer.
+            Sedan starten har vi samlat på oss ovärderlig kunskap genom att arbeta nära både privatpersoner, 
+            företag och fastighetsägare. Vår breda erfarenhet gör att vi kan ta oss an både små och stora uppdrag med trygg hand, 
+            oavsett om det gäller servicejobb, nybyggnation eller tekniska lösningar.
             </p>
             
             <div className="flex flex-wrap gap-4" aria-label="Certifikat och medlemskap">
               <div className="bg-[#66BEF0] text-white px-4 py-2 rounded-full font-semibold">
                 Auktoriserad elektriker
               </div>
-              <div className="bg-[#66BEF0] text-white px-4 py-2 rounded-full font-semibold">
-                Fullständigt försäkrad
+               <div className="bg-[#66BEF0] text-white px-4 py-2 rounded-full font-semibold">
+                SEK-medlem
               </div>
               <div className="bg-[#66BEF0] text-white px-4 py-2 rounded-full font-semibold">
-                SEK-medlem
+                ELSÄK kraven följs
               </div>
             </div>
           </div>

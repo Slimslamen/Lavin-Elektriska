@@ -7,23 +7,28 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Hur lång tid tar en typisk elinstallation?",
-      answer: "Det beror på projektets omfattning. En enkel uttagsinstallation kan ta några timmar, medan en komplett elinstallation i ett hus kan ta flera dagar. Vi ger alltid en tidsuppskattning innan vi börjar arbetet."
+      answer1: "Tiden beror på uppdragets omfattning. Ett enklare jobb, som att installera ett eluttag eller byta en strömbrytare, tar oftast 1–2 timmar.",
+      answer2: "Större projekt som en komplett eldragning i en villa eller lokal kan ta allt från ett par dagar till flera veckor, beroende på storlek, tillgänglighet och kundens önskemål. Vi ger alltid en tydlig tidsuppskattning innan vi sätter igång, så du vet vad du kan förvänta dig."
     },
     {
-      question: "Är ni auktoriserade och försäkrade?",
-      answer: "Ja, vi är fullständigt auktoriserade av Elsäkerhetsverket och har omfattande ansvarsförsäkring. All vårt arbete följer svenska elkoder och säkerhetsbestämmelser."
+      question: "Hur vet jag att ert företag är godkänt och arbetar säkert?",
+      answer1: "Ja, vi är fullständigt auktoriserade av Elsäkerhetsverket och har omfattande ansvarsförsäkring. All vårt arbete följer svenska elkoder och säkerhetsbestämmelser.",
+      answer2: "Du kan enkelt kontrollera vår registrering direkt på elsäkerhetsverket hemsida."
     },
     {
       question: "Vad kostar en laddstolpeinstallation?",
-      answer: "Kostnaden varierar beroende på typ av laddstolpe, elcentralens placering och eventuella uppgraderingar som behövs. Vi erbjuder gratis kostnadsförslag för alla laddstolpeinstallationer."
+      answer1: "Kostnaden varierar beroende på typ av laddstolpe, elcentralens placering och eventuella uppgraderingar som behövs. Vi erbjuder gratis kostnadsförslag för alla laddstolpeinstallationer.",
+      answer2: ''
     },
     {
       question: "Ger ni garanti på ert arbete?",
-      answer: "Ja, vi ger full garanti på allt vårt arbete och använder endast kvalitetsmaterial från välkända tillverkare. Garantitiden varierar beroende på typ av installation."
+      answer1: "Ja, vi ger full garanti på allt vårt arbete och använder endast kvalitetsmaterial från välkända tillverkare. Garantitiden varierar beroende på typ av installation.",
+      answer2: ''
     },
     {
       question: "Kan ni hjälpa till med elbesiktning?",
-      answer: "Ja, vi utför professionella elbesiktningar för både bostäder och kommersiella fastigheter. Vi hjälper er att identifiera potentiella problem och säkerställa att er installation möter alla säkerhetskrav."
+      answer1: "Ja, vi utför professionella elbesiktningar för både bostäder och kommersiella fastigheter. Vi hjälper er att identifiera potentiella problem och säkerställa att er installation möter alla säkerhetskrav.",
+      answer2: ''
     }
   ];
 
@@ -63,7 +68,13 @@ const FAQ = () => {
               </button>
               {openIndex === index && (
                 <div id={`faq-panel-${index}`} role="region" aria-labelledby={`faq-button-${index}`} className="bg-white p-6 rounded-b-xl shadow-inner text-gray-700">
-                  {faq.answer}
+                   <p>{faq.answer1}</p>
+                  {faq.answer2 !== '' ? (
+                    <div>
+                      <br />
+                      <p>{faq.answer2}</p>
+                    </div>
+                  ) : null}
                 </div>
               )}
             </div>

@@ -16,7 +16,7 @@ function App() {
         <Hero />
         <Services />
         <About />
-        <Gallery />
+        {/* <Gallery /> */}
         <Testimonials />
         <FAQ />
         {/* <Location /> */}

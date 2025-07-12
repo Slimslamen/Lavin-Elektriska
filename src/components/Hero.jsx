@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           <div className="animate-fade-in text-white">
-            <div className="mb-8">
+            {/* <div className="mb-8">
               <div className="flex items-center gap-3 mb-6">
                   <div className="w-50 mt-2 rounded-lg flex items-center justify-center">
                       <img src="/Images/Lavin_Elektriska.png" alt="Lavin Elektriska logotyp" />
@@ -33,14 +33,14 @@ const Hero = () => {
                   <p className="text-blue-200 text-sm">Din pålitliga elpartner</p>
                 </div>
               </div>
-            </div>
+            </div> */}
             
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                10+ års
+                Lavin Elektriska AB
               </span>
               <br />
-              <span className="text-[#66BEF0] drop-shadow-lg">erfarenhet</span>
+              <span className="text-[#66BEF0] drop-shadow-lg text-[25px] opacity-70">Din pålitliga elpartner</span>
             </h1>
             
             <div className="space-y-6 mb-8 text-lg">
@@ -53,9 +53,9 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="border-2 border-[#66BEF0] text-white bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl text-lg font-semibold hover:bg-[#66BEF0] hover:text-white transform hover:scale-95 transition-all duration-300 hover:shadow-lg" aria-label="Få gratis offert">
+              <a href='#CTA' id='Offert' className="border-2 text-center bg-[#66BEF0] border-[#66BEF0] text-white backdrop-blur-sm px-8 py-3 rounded-xl text-lg font-semibold hover:text-white transform hover:scale-95 transition-all duration-300 hover:shadow-lg" aria-label="Få gratis offert">
                 Gratis offert
-              </button>
+              </a>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" aria-label="Företagsfördelar">
@@ -65,7 +65,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg">
                 <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" aria-hidden="true" />
-                <span className="text-sm font-medium">15+ års erfarenhet</span>
+                <span className="text-sm font-medium">12+ års erfarenhet</span>
               </div>
             </div>
           </div>
