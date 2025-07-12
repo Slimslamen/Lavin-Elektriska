@@ -22,19 +22,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-          <div className="animate-fade-in text-white">
-            {/* <div className="mb-8">
-              <div className="flex items-center gap-3 mb-6">
-                  <div className="w-50 mt-2 rounded-lg flex items-center justify-center">
-                      <img src="/Images/Lavin_Elektriska.png" alt="Lavin Elektriska logotyp" />
-                  </div>
-                <div>
-                  <span className="text-2xl font-bold">Lavin Elektriska</span>
-                  <p className="text-blue-200 text-sm">Din pålitliga elpartner</p>
-                </div>
-              </div>
-            </div> */}
-            
+          <div className="animate-fade-in text-white">         
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                 Lavin Elektriska AB

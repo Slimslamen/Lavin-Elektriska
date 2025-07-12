@@ -4,7 +4,7 @@ import { Star, Quote } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Andriw Jimenez",
+      name: "Andriw",
       location: "Gislaved",
       rating: 5,
       text: "Fantastisk service! Lavin Elektriska installerade laddstolpe för vår Tesla och jobbet var perfekt utfört. Professionellt och punktligt.",
@@ -16,8 +16,8 @@ const Testimonials = () => {
       text: "Mycket nöjd med elinstallationen i vårt nya kök. Snabb respons på jouren och rimliga priser. Rekommenderar starkt!",
     },
     {
-      name: "Ingvar",
-      location: "Partille",
+      name: "Ivan",
+      location: "Åkered",
       rating: 5,
       text: "Lavin Elektriska hjälpte oss med omfattande elarbeten i vårt kontor. Professionellt utfört och enligt tidplan. Toppbetyg!",
     }
