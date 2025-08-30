@@ -7,7 +7,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
+          backgroundImage: "url('/Images/heroImg.jpeg')",
         }}
         aria-hidden="true"
       >
@@ -41,7 +41,20 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <a href='#CTA' id='Offert' className="border-2 text-center bg-[#66BEF0] border-[#66BEF0] text-white backdrop-blur-sm px-8 py-3 rounded-xl text-lg font-semibold hover:text-white transform hover:scale-95 transition-all duration-300 hover:shadow-lg" aria-label="Få gratis offert">
+              <a
+                href="#CTA"
+                id="Offert"
+                className="border-2 text-center bg-[#66BEF0] border-[#66BEF0] text-white backdrop-blur-sm px-8 py-3 rounded-xl text-lg font-semibold hover:text-white transform hover:scale-95 transition-all duration-300 hover:shadow-lg"
+                aria-label="Få gratis offert"
+                onClick={e => {
+                  e.preventDefault();
+                  const element = document.getElementById('CTA');
+                  if (element) {
+                    const y = element.getBoundingClientRect().top + window.pageYOffset - 80;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
+                }}
+              >
                 Gratis offert
               </a>
             </div>
