@@ -6,19 +6,19 @@ const Services = () => {
     {
       icon: <Home className="w-8 h-8 text-white" />,
       title: "Elinstallationer",
-      description: "Vi ser till att varje elinstallation inte bara uppfyller dagens krav på säkerhet och standarder, utan också är förberedd för framtidens behov.",
+      description: "Dina elinstallationer uppdateras med den senaste tekniken och moderna lösningar för bästa resultat, anpassat för just dina behov och din vardag.",
       bgImage: "/Images/Cables.jpg"
     },
     {
       icon: <Zap className="w-8 h-8 text-white" />,
       title: "Installation av laddstolpar",
-      description: "Vi erbjuder noggrant utförda installationer av laddstolpar, så att du kan ladda din elbil snabbt och säkert.",
+      description: "Noggrant utförda installationer av laddstolpar gör det enkelt att ladda elbilen snabbt, säkert och hållbart.",
       bgImage: "/Images/chargingpole.jpg"
     },
     {
       icon: <Settings className="w-8 h-8 text-white" />,
       title: "Felsökningar & reparationer",
-      description: "Vi utför professionell felsökning och reparation av ditt elsystem, inklusive åtgärdande av kortslutningar, strömavbrott och andra elektriska fel.",
+      description: "Professionell felsökning och reparation av ditt elsystem, inklusive åtgärd av kortslutningar, strömavbrott och andra elektriska fel.",
       bgImage: "/Images/Kablar.jpg"
     }
   ];

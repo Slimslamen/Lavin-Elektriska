@@ -19,9 +19,9 @@ const About = () => {
            professionella elinstallationer, alltid med fokus på kvalitet och noggrannhet.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-            Sedan starten har vi samlat på oss ovärderlig kunskap genom att arbeta nära både privatpersoner, 
-            företag och fastighetsägare. Vår breda erfarenhet gör att vi kan ta oss an både små och stora uppdrag med trygg hand, 
-            oavsett om det gäller servicejobb, nybyggnation eller tekniska lösningar.
+        Bred kompetens har vuxit fram genom att arbeta nära både privatpersoner, företag och fastighetsägare. 
+        Vår erfarenhet gör att vi kan ta oss an både små och stora uppdrag med trygg hand, oavsett om det gäller servicejobb, 
+        nybyggnation eller tekniska lösningar.
             </p>
             
             <div className="flex flex-wrap gap-4" aria-label="Certifikat och medlemskap">
