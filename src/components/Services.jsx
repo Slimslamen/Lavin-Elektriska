@@ -7,7 +7,7 @@ const Services = () => {
       icon: <Home className="w-8 h-8 text-white" />,
       title: "Elinstallationer",
       description: "Dina elinstallationer uppdateras med den senaste tekniken och moderna lösningar för bästa resultat, anpassat för just dina behov och din vardag.",
-      bgImage: "/Images/Cables.jpg"
+      bgImage: "/Images/Elinstallationer.jpg"
     },
     {
       icon: <Zap className="w-8 h-8 text-white" />,
@@ -19,7 +19,7 @@ const Services = () => {
       icon: <Settings className="w-8 h-8 text-white" />,
       title: "Felsökningar & reparationer",
       description: "Professionell felsökning och reparation av ditt elsystem, inklusive åtgärd av kortslutningar, strömavbrott och andra elektriska fel.",
-      bgImage: "/Images/Kablar.jpg"
+      bgImage: "/Images/felsokningReparationer2.jpg"
     }
   ];
 

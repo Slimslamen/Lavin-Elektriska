@@ -4,19 +4,21 @@ import { MoneySend, TruckFast } from 'iconsax-reactjs';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden" aria-label="Startsida hero">
-      {/* Background with modern overlay */}
+      {/* Responsive background image with optimized loading */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/Images/heroImg.avif')",
-        }}
+        className="absolute inset-0 w-full h-full"
         aria-hidden="true"
       >
+        <img
+          src="/Images/TestHero2.jpg"
+          alt=""
+          className="w-full h-full object-cover object-center"
+          decoding="async"
+          style={{ position: "absolute", inset: 0, zIndex: 0 }}
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30" aria-hidden="true"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#66BEF0]/20 to-transparent" aria-hidden="true"></div>
       </div>
-
-      {/* Floating elements for modern effect */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-[#66BEF0]/10 rounded-full blur-xl animate-pulse" aria-hidden="true"></div>
       <div className="absolute bottom-20 right-10 w-48 h-48 bg-blue-400/10 rounded-full blur-2xl animate-pulse delay-1000" aria-hidden="true"></div>
 
@@ -63,7 +65,7 @@ const Hero = () => {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" aria-label="Företagsfördelar">
+            <div className="smallerbox grid grid-cols-1 sm:grid-cols-3 gap-4 smallerBox" aria-label="Företagsfördelar">
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg">
                 <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" aria-hidden="true" />
                 <span className="text-sm font-medium">Elinstallationer</span>
@@ -80,7 +82,7 @@ const Hero = () => {
           </div>
 
           {/* Stats/Features Card */}
-          <div className="animate-fade-in lg:block hidden">
+          <div className="animate-fade-in lg:block">
             <div
               className="bg-white/10 backdrop-blur-2xl p-8 rounded-2xl border border-white/20 shadow-2xl"
               aria-label="Varför välja oss?"

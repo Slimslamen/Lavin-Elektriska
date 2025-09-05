@@ -8,7 +8,7 @@ const Policy = () => {
       <SecondHeader />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#66BEF0] to-[#4A90E2] py-20">
+      <section className="bg-gradient-to-br from-[#66BEF0] to-[#4A90E2] py-10">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold text-white mb-6">Sekretesspolicy</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
