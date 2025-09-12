@@ -6,11 +6,6 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 
 const About = () => {
-  // const stats = [
-  //   { icon: <Award className="w-7 h-7 text-white" />, number: "12+", label: "Års erfarenhet" },
-  //   // { icon: <Users className="w-7 h-7 text-white" />, number: "1000+", label: "Nöjda kunder" },
-  //   { icon: <Shield className="w-7 h-7 text-white" />, number: "100%", label: "Auktoriserad & försäkrad" },
-  // ];
 
   const dynamicEl = [
     {
@@ -44,9 +39,9 @@ const About = () => {
       subHtml: `Badrum under renovering med ny kaklad vägg, toalett och handfat.`,
     },
       {
-      src: "/Images/Central.webp",
-      thumb: "/Images/Central.webp",
-      subHtml: `Elcentral med säkringar och anslutna kablar.`,
+      src: "/Images/ElCentralArbete.webp",
+      thumb: "/Images/ElCentralArbete.webp",
+      subHtml: `Arbete på elcentral med säkringar och anslutna kablar.`,
     },
     {
       src: "/Images/VagUttagNara.webp",
@@ -58,13 +53,12 @@ const About = () => {
       thumb: "/Images/ElHandskning.webp",
       subHtml: `Öppen elcentral med säkringar, kablar och anslutningar.`,
     },
-    // Add more placeholder images as needed
   ];
   return (
     <section id="about" className="py-20 bg-white" aria-label="Om Lavin Elektriska">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-96 items-center">
-          <div className="animate-fade-in w-[45em]">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+          <div className="animate-fade-in w-full max-w-xl mx-auto lg:mx-0">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Om Lavin Elektriska</h2>
             <p className="text-lg text-gray-600 mb-6">
               Lavin Elektriska grundades i Småland och har idag sin bas i Västra Götaland. Med över lång erfarenhet i
@@ -90,16 +84,29 @@ const About = () => {
 
           <div className="animate-fade-in">
             <div aria-label="Företagsbilder">
-              <LightGallery plugins={[lgZoom, lgThumbnail]} elementClassNames="grid grid-cols-3 gap-2" speed={400} controls={false}>
+              <LightGallery
+                plugins={[lgZoom, lgThumbnail]}
+                elementClassNames="grid grid-cols-1 sm:grid-cols-3 gap-3 auto-rows-[150px] md:auto-rows-auto"
+                speed={400}
+                controls={false}
+              >
                 {dynamicEl.map((it, i) => (
-                  <a key={i} href={it.src}>
+                  <a
+                    key={i}
+                    href={it.src}
+                    className="group relative block overflow-hidden rounded-lg focus:outline-none focus:ring-2 focus:ring-[#66BEF0]"
+                    aria-label={typeof it.subHtml === 'string' ? it.subHtml : 'Öppna bild'}                
+                  >
                     <img
                       src={it.thumb}
                       alt={typeof it.subHtml === "string" ? it.subHtml : "Galleri bild"}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-auto rounded-lg"
+                      fetchpriority="low"
+                      sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 300px"
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
+                    <span className="pointer-events-none absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" aria-hidden="true" />
                   </a>
                 ))}
               </LightGallery>

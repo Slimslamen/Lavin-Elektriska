@@ -1,49 +1,39 @@
 import { Phone, CheckCircle, ArrowRight, ListChecks } from "lucide-react";
-import { MoneySend, TruckFast } from 'iconsax-reactjs';
-import { useState } from 'react';
+import { MoneySend, TruckFast } from "iconsax-reactjs";
 
 const Hero = () => {
-  const [bgLoaded, setBgLoaded] = useState(false);
   return (
     <section id="home" className="relative min-h-screen overflow-hidden" aria-label="Startsida hero">
-      {/* Responsive background image with optimized loading & LQIP */}
-      <div
-        className="absolute inset-0 w-full h-full"
-        aria-hidden="true"
-      >
+      {/* Responsive background image without LQIP */}
+      <div className="absolute inset-0 w-full h-full" aria-hidden="true">
         <picture>
-          {/* NOTE: Ensure these image variants exist. Create optimized sizes (e.g. using sharp / Squoosh) */}
-          {/* Mobile-first sources */}
-          <source type="image/webp" srcSet="/Images/HeroImg-480.webp 480w, /Images/HeroImg-768.webp 768w, /Images/HeroImg-1024.webp 1024w, /Images/HeroImg-1536.webp 1536w, /Images/HeroImg-1920.webp 1920w" sizes="100vw" />
-          {/* Fallback single large image */}
+          {/* Mobile (portrait / tighter crop). You can swap to another asset if desired. */}
+          <source media="(max-width: 640px)" type="image/webp" srcSet="/Images/Central.webp" />
+          {/* Desktop / larger screens */}
+          <source media="(min-width: 641px)" type="image/webp" srcSet="/Images/HeroImg.webp" />
+          {/* Fallback img element */}
           <img
             src="/Images/HeroImg.webp"
-            srcSet="/Images/HeroImg-480.webp 480w, /Images/HeroImg-768.webp 768w, /Images/HeroImg-1024.webp 1024w, /Images/HeroImg-1536.webp 1536w, /Images/HeroImg-1920.webp 1920w"
-            sizes="100vw"
             alt="Bakgrundsbild elinstallation"
             className="w-full h-full object-cover object-center"
             decoding="async"
             loading="eager"
-            width="1670"
-            height="940"
-            style={{ position: "absolute", inset: 0, zIndex: 0, opacity: bgLoaded ? 1 : 0, transition: 'opacity 600ms ease' }}
-            onLoad={() => setBgLoaded(true)}
+            sizes="(max-width: 640px) 100vw, 100vw"
+            style={{ position: "absolute", inset: 0, zIndex: 0 }}
           />
         </picture>
-        {/* Blur LQIP placeholder (provide a tiny pre-blurred file e.g. HeroImg-blur.jpg/webp) */}
-        <img
-          src="/Images/HeroImg-blur.jpg" /* fallback placeholder; create this small (~10KB) */
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full object-cover object-center"
-          style={{ position: 'absolute', inset: 0, zIndex: 0, filter: 'blur(20px)', transform: 'scale(1.05)', opacity: bgLoaded ? 0 : 1, transition: 'opacity 600ms ease' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30" aria-hidden="true"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#66BEF0]/20 to-transparent" aria-hidden="true"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#66BEF0]/20 to-transparent" aria-hidden="true" />
       </div>
-      <div className="absolute top-20 left-10 w-32 h-32 bg-[#66BEF0]/10 rounded-full blur-xl animate-pulse" aria-hidden="true"></div>
-      <div className="absolute bottom-20 right-10 w-48 h-48 bg-blue-400/10 rounded-full blur-2xl animate-pulse delay-1000" aria-hidden="true"></div>
-
+      {/* Decorative blobs */}
+      <div
+        className="absolute top-20 left-10 w-32 h-32 bg-[#66BEF0]/10 rounded-full blur-xl animate-pulse"
+        aria-hidden="true"
+      ></div>
+      <div
+        className="absolute bottom-20 right-10 w-48 h-48 bg-blue-400/10 rounded-full blur-2xl animate-pulse delay-1000"
+        aria-hidden="true"
+      ></div>
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
@@ -55,7 +45,6 @@ const Hero = () => {
               <br />
               <span className="text-[#66BEF0] drop-shadow-lg text-[25px] opacity-70">Din pålitliga elpartner</span>
             </h1>
-
             <div className="space-y-6 mb-8 text-lg">
               <p className="text-gray-200 leading-relaxed">
                 Sedan starten har vi jobbat på att bygga erfarenhet och kunskap inom el-branschen för att kunna erbjuda
@@ -67,7 +56,6 @@ const Hero = () => {
                 detaljerna och alltid arbetar för en lösning som passar just dina behov.
               </p>
             </div>
-
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
                 href="#CTA"
@@ -86,7 +74,6 @@ const Hero = () => {
                 Gratis offert
               </a>
             </div>
-
             <div className="smallerbox grid grid-cols-1 sm:grid-cols-3 gap-4 smallerBox" aria-label="Företagsfördelar">
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg">
                 <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" aria-hidden="true" />
@@ -102,8 +89,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-
-          {/* Stats/Features Card */}
           <div className="animate-fade-in lg:block">
             <div
               className="bg-white/10 backdrop-blur-2xl p-8 rounded-2xl border border-white/20 shadow-2xl"
