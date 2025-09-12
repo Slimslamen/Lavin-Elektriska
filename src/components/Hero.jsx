@@ -10,7 +10,7 @@ const Hero = () => {
         aria-hidden="true"
       >
         <img
-          src="/Images/TestHero2.jpg"
+          src="/Images/HeroImg.webp"
           alt=""
           className="w-full h-full object-cover object-center"
           decoding="async"

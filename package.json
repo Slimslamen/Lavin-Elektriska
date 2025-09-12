@@ -20,6 +20,7 @@
     "@vercel/analytics": "^1.5.0",
     "flowbite-react": "^0.11.8",
     "iconsax-reactjs": "^0.0.8",
+    "lightgallery": "^2.9.0-beta.1",
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-calendly": "^4.4.0",
