@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom";
-import { Home, Mail, ArrowLeft } from "lucide-react";
+import { Home } from "lucide-react";
+import { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import SecondHeader from "../components/SeconHeader";
 
 const NotFound = () => {
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    // Move focus to the main heading for screen readers and keyboard users
+    headingRef.current?.focus();
+    // Optional: set a descriptive title
+    const prev = document.title;
+    document.title = "404 – Sidan kunde inte hittas | Lavin Elektriska";
+    return () => { document.title = prev; };
+  }, []);
 
   return (
     <>
@@ -12,24 +23,29 @@ const NotFound = () => {
         className="relative min-h-[80vh] flex-col flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white overflow-hidden"
         aria-labelledby="nf-title"
       >
-        <div className="absolute inset-0 -z-10">
-          <img src="/Images/HeroImg.webp" alt="Dekorativ bakgrund" className="w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 -z-10" aria-hidden="true">
+          <img src="/Images/HeroImg.webp" alt="" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40" aria-hidden="true" />
         </div>
 
         <section className="container mx-auto px-6 py-16 text-center max-w-3xl">
           <p className="text-[#66BEF0] font-semibold tracking-widest mb-3">404</p>
-          <h1 id="nf-title" className="text-4xl md:text-5xl font-extrabold mb-4">
+          <h1
+            id="nf-title"
+            ref={headingRef}
+            tabIndex="-1"
+            className="text-4xl md:text-5xl font-extrabold mb-4 focus:outline-none"
+          >
             Sidan kunde inte hittas
           </h1>
           <p className="text-gray-200 mb-8">
             Länken kan vara felaktig eller sidan har flyttats. Använd knapparna nedan för att fortsätta.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center" role="navigation" aria-label="Alternativ efter fel 404">
             <Link
               to="/"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#66BEF0] px-5 py-3 font-semibold text-white shadow hover:shadow-lg hover:brightness-110 transition"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#66BEF0] px-5 py-3 font-semibold text-white shadow hover:shadow-lg hover:brightness-110 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#66BEF0] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800"
               aria-label="Gå till startsidan"
             >
               <Home className="w-5 h-5" aria-hidden="true" />
