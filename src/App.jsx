@@ -11,8 +11,8 @@ function App() {
     <BlogProvider>
       <BrowserRouter>
         <Routes>
-            <Route index path="/" element={<Main />}/>
-            <Route path="/Blog" element={<Blog />}/>
+            <Route path="/" element={<Main />}/>
+            {/* <Route path="/Blog" element={<Blog />}/> */}
             <Route path="/Policy" element={<Policy />}/>
         </Routes>
       </BrowserRouter>

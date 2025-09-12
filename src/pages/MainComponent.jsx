@@ -17,9 +17,7 @@ function App() {
         <Services />
         <Testimonials />
         <About />
-        {/* <Gallery /> */}
         <FAQ />
-        {/* <Location /> */}
         <Contact />
         <CTA />
         <Footer />
