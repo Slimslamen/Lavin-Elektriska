@@ -1,6 +1,6 @@
 import Main from "./pages/MainComponent";
 import Policy from "./pages/policyPage";
-import NotFound from "./pages/notFound";
+import NotFound from "./pages/notFound.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { BlogProvider } from "./Context/BlogProvider"
 import './App.css'
