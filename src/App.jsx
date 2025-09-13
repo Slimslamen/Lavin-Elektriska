@@ -1,5 +1,4 @@
 import Main from "./pages/MainComponent";
-import Blog from "./pages/blog";
 import Policy from "./pages/policy";
 import NotFound from "./pages/notFound";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
