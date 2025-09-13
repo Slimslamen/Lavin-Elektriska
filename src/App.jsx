@@ -14,7 +14,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Main />}/>
             {/* <Route path="/Blog" element={<Blog />}/> */}
-            <Route path="/Policy" element={<Policy />}/>
+            <Route path="/policy" element={<Policy />}/>
             {/* 404 catch-all */}
             <Route path="*" element={<NotFound />} />
         </Routes>

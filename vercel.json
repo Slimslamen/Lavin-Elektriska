@@ -1,10 +1,9 @@
 {
   "redirects": [
     {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
-    }
+      "source": "/index.html", "destination": "/", "permanent": true
+    },
+    { "source": "/Policy", "destination": "/policy", "permanent": true }
   ],
   "rewrites": [
     {
@@ -15,9 +14,7 @@
   "headers": [
     {
       "source": "/Images/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     }
   ]
 }
