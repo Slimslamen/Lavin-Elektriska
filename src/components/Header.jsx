@@ -48,7 +48,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <div className="md:w-40 mt-2 rounded-lg flex items-center justify-center md:ml-0">
-                <img src="/Images/LE.png" alt="Lavin Elektriska logotyp" className="rounded-[80px] mb-2" />
+                <img src="/Images/LE.png" alt="Lavin Elektriska logotyp" loading='eager' className="rounded-[80px] mb-2" />
               </div>
               <div className="ml-5">
                 <h1 className="text-gray-900 archivo-black-regular md:block">LAVIN ELEKTRISKA</h1>

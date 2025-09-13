@@ -40,6 +40,7 @@ const Gallery = () => {
                 <img 
                   src={project.image} 
                   alt={project.title}
+                  loading='lazy'
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>

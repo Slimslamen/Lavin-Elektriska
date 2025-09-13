@@ -42,6 +42,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
+      <link rel="canonical" href="https://lavinelektriska.se/blog"/>
       <SecondHeader />
       
       {/* Hero Section */}

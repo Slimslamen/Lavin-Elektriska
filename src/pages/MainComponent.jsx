@@ -12,6 +12,7 @@ import Footer from "../components/Footer"
 function App() {
   return (
     <div>      
+      <link rel="canonical" href="https://lavinelektriska.se"/>
         <Header />
         <Hero />
         <Services />

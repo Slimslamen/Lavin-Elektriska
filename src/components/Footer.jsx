@@ -27,17 +27,6 @@ const Footer = () => {
             </p>
           </div>
           
-          {/* <div>
-            <h4 className="text-lg font-semibold mb-4">Snabblänkar</h4>
-            <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-400 hover:text-[#66BEF0] transition-colors">Hem</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-[#66BEF0] transition-colors">Tjänster</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-[#66BEF0] transition-colors">Erfarenhet</a></li>
-              <li><a href="/blog" className="text-gray-400 hover:text-[#66BEF0] transition-colors">Blogg</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-[#66BEF0] transition-colors">Kontakt</a></li>
-            </ul>
-          </div> */}
-          
           <div>
             <h4 className="text-lg font-semibold mb-4">Kontaktinfo</h4>
             <div className="space-y-3">
@@ -49,10 +38,6 @@ const Footer = () => {
                 <IoMdMail className="w-5 h-5 text-[#66BEF0]" aria-hidden="true" />
                 <span className="text-gray-400">Le@lavinelektriska.se</span>
               </div>
-              {/* <div className="flex items-center gap-3">
-                <IoLocationSharp className="w-5 h-5 text-[#66BEF0]" />
-                <span className="text-gray-400">Olskrokstorget, 41665 Göteborg</span>
-              </div> */}
             </div>
           </div>
           
@@ -71,7 +56,7 @@ const Footer = () => {
             </div>
             
             <div className="text-center flex flex-row items-center justify-center md:ml-[-10px]">
-              <img src="/Images/Elsäkerhetsverket.png" alt="Elsäkerhetsverket logotyp" className='w-10 h-10' />
+              <img src="/Images/Elsäkerhetsverket.png" loading='lazy' alt="Elsäkerhetsverket logotyp" className='w-10 h-10' />
               <div className="bg-orange-500 text-white py-1 rounded-full text-sm font-semibold inline-block">
                 Godkända av: ELSÄKERHETSVERKET
               </div>
@@ -84,7 +69,7 @@ const Footer = () => {
             ©2024 Lavin Elektriska AB.
           </p>
           <div className="mt-4 md:mt-0">
-            <Link to="/Policy" className="text-gray-400 hover:text-[#66BEF0] transition-colors" aria-label="Sekretesspolicy">
+            <Link to="/policy" className="text-gray-400 hover:text-[#66BEF0] transition-colors" aria-label="Sekretesspolicy">
               Sekretesspolicy
             </Link>
           </div>

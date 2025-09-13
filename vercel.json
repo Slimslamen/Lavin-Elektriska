@@ -2,8 +2,7 @@
   "redirects": [
     {
       "source": "/index.html", "destination": "/", "permanent": true
-    },
-    { "source": "/Policy", "destination": "/policy", "permanent": true }
+    }
   ],
   "rewrites": [
     {

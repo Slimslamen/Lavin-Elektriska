@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden" aria-label="Startsida hero">
       {/* Responsive background image without LQIP */}
-      <div className="absolute inset-0 w-full h-full" aria-hidden="true">
+      <div className="absolute inset-0 w-full h-full max-w-full" aria-hidden="true">
         <picture>
           {/* Mobile (portrait / tighter crop). You can swap to another asset if desired. */}
           <source media="(max-width: 640px)" type="image/webp" srcSet="/Images/Central.webp" />
@@ -16,9 +16,7 @@ const Hero = () => {
             src="/Images/HeroImg.webp"
             alt="Bakgrundsbild elinstallation"
             className="w-full h-full object-cover object-center"
-            decoding="async"
-            loading="eager"
-            sizes="(max-width: 640px) 100vw, 100vw"
+            // sizes="(max-width: 640px) 100vw, 100vw"
             style={{ position: "absolute", inset: 0, zIndex: 0 }}
           />
         </picture>

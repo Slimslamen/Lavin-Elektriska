@@ -85,7 +85,7 @@ const About = () => {
           <div className="animate-fade-in">
             <div aria-label="Företagsbilder">
               <LightGallery
-                plugins={[lgZoom, lgThumbnail]}
+                plugins={[lgThumbnail]}
                 elementClassNames="grid grid-cols-1 sm:grid-cols-3 gap-3 auto-rows-[150px] md:auto-rows-auto"
                 speed={400}
                 controls={false}
@@ -94,16 +94,14 @@ const About = () => {
                   <a
                     key={i}
                     href={it.src}
-                    className="group relative block overflow-hidden rounded-lg focus:outline-none focus:ring-2 focus:ring-[#66BEF0]"
+                    className="group relative block overflow-hidden rounded-lg focus:outline-none focus:ring-2 focus:ring-[#66BEF0] max-w-full"
                     aria-label={typeof it.subHtml === 'string' ? it.subHtml : 'Öppna bild'}                
                   >
                     <img
                       src={it.thumb}
                       alt={typeof it.subHtml === "string" ? it.subHtml : "Galleri bild"}
                       loading="lazy"
-                      decoding="async"
-                      fetchpriority="low"
-                      sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 300px"
+                      // sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 300px"
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <span className="pointer-events-none absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" aria-hidden="true" />
