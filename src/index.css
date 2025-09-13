@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Archivo Black";
+  src: local("ArchivoBlack-Regular"), url("/asset//fonts/ArchivoBlack-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,7 +21,7 @@
 
 .archivo-black-regular {
   font-family: "Archivo Black", sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 40px;
   font-style: normal; 
 }
