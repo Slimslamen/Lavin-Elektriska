@@ -1,7 +1,6 @@
 import Main from "./pages/MainComponent";
-import Policy from "./pages/Policy";
-import Blog from "./pages/Blog";
-import NotFound from "./pages/notFound";
+import Policy from "./pages/Policy.jsx";
+import NotFound from "./pages/notFound.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { BlogProvider } from "./Context/BlogProvider"
 import './App.css'
@@ -13,7 +12,6 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Main />}/>
-            {/* <Route path="/blog" element={<Blog />}/> */}
             <Route path="/policyPage" element={<Policy />}/>
             {/* 404 catch-all */}
             <Route path="*" element={<NotFound />} />
