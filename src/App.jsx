@@ -1,5 +1,6 @@
 import Main from "./pages/MainComponent";
-import Policy from "./pages/policy";
+import Policy from "./pages/policyPage";
+import Blog from "./pages/blogPage";
 import NotFound from "./pages/notFound";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { BlogProvider } from "./Context/BlogProvider"
@@ -12,8 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Main />}/>
-            
-            <Route path="/policy" element={<Policy />}/>
+            {/* <Route path="/blogPage" element={<Blog />}/> */}
+            <Route path="/policyPage" element={<Policy />}/>
             {/* 404 catch-all */}
             <Route path="*" element={<NotFound />} />
         </Routes>

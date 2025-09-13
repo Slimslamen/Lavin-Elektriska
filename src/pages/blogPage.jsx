@@ -1,11 +1,12 @@
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import SecondHeader from '../components/SeconHeader';
 import Footer from '../components/Footer';
-import { useContext } from 'react';
+
 import BlogModal from '../components/BlogModal';
 import { BlogContext } from '../Context/BlogContext'
+import { useContext } from 'react';
 
-const blog = () => {
+const Blog = () => {
   const BContext = useContext(BlogContext)
 
   const { openBlogModal, setOpenBlogModal, setSelectedPost, selectedPost } = BContext;
@@ -110,4 +111,4 @@ const blog = () => {
   );
 };
 
-export default blog;
+export default Blog;
