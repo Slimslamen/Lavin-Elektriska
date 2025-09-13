@@ -11,6 +11,7 @@ function App() {
     <BlogProvider>
       <BrowserRouter>
         <Routes>
+          {/* Testing */}
             <Route path="/" element={<Main />}/>
             <Route path="/policyPage" element={<Policy />}/>
             {/* 404 catch-all */}
