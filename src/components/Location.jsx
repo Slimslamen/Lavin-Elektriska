@@ -1,13 +1,13 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Location = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
+  const mapContainer = useRef(null);
   const [mapboxToken, setMapboxToken] = useState('');
   const [showTokenInput, setShowTokenInput] = useState(true);
 
-  const initializeMap = async (token: string) => {
+  const initializeMap = async (token) => {
     if (!mapContainer.current || !token) return;
 
     try {
@@ -36,7 +36,7 @@ const Location = () => {
     }
   };
 
-  const handleTokenSubmit = (e: React.FormEvent) => {
+  const handleTokenSubmit = (e) => {
     e.preventDefault();
     if (mapboxToken.trim()) {
       setShowTokenInput(false);
