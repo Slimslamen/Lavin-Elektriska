@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Main />}/>
-            {/* <Route path="/blogPage" element={<Blog />}/> */}
+            {/* <Route path="/blog" element={<Blog />}/> */}
             <Route path="/policyPage" element={<Policy />}/>
             {/* 404 catch-all */}
             <Route path="*" element={<NotFound />} />
