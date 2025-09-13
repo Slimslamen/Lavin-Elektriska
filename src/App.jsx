@@ -1,6 +1,7 @@
 import Main from "./pages/MainComponent";
-import Policy from "./pages/policy";
-import NotFound from "./pages/notFound";
+import Policy from "./pages/policy"; // file is lowercase policy.jsx
+import NotFound from "./pages/notFound"; // file is lowercase notFound.jsx
+import Blog from "./pages/blog"; // add blog import matching blog.jsx
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { BlogProvider } from "./Context/BlogProvider"
 import './App.css'
@@ -12,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Main />}/>
-            {/* <Route path="/blog" element={<Blog />}/> */}
+            <Route path="/blog" element={<Blog />}/>
             <Route path="/policy" element={<Policy />}/>
             {/* 404 catch-all */}
             <Route path="*" element={<NotFound />} />
