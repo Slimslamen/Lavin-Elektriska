@@ -3,9 +3,9 @@ import SecondHeader from '../components/SeconHeader';
 import Footer from '../components/Footer';
 import { useContext } from 'react';
 import BlogModal from '../components/BlogModal';
-import { BlogContext } from './BlogContext'
+import { BlogContext } from '../Context/BlogContext'
 
-const Blog = () => {
+const blog = () => {
   const BContext = useContext(BlogContext)
 
   const { openBlogModal, setOpenBlogModal, setSelectedPost, selectedPost } = BContext;
@@ -110,4 +110,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default blog;

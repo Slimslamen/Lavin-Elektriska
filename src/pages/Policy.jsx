@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import SecondHeader from "../components/SeconHeader";
 
-const Policy = () => {
+const policy = () => {
   return (
     <div className="min-h-screen">
       <link rel="canonical" href="https://lavinelektriska.se/policy" />
@@ -157,4 +157,4 @@ const Policy = () => {
   );
 };
 
-export default Policy;
+export default policy;
