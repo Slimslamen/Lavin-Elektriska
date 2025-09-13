@@ -3,7 +3,7 @@ import SecondHeader from '../components/SeconHeader';
 import Footer from '../components/Footer';
 import { useContext } from 'react';
 import BlogModal from '../components/BlogModal';
-import { BlogContext } from '../Context/BlogContext'
+import { BlogContext } from './BlogContext'
 
 const Blog = () => {
   const BContext = useContext(BlogContext)
