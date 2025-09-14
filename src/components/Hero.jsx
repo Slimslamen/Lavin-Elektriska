@@ -13,10 +13,11 @@ const Hero = () => {
           <source media="(min-width: 641px)" type="image/webp" srcSet="/Images/HeroImg.webp" />
           {/* Fallback img element */}
           <img
-            src="/Images/HeroImg.webp"
+            src="/Images/plejdHero.webp"
             alt="Bakgrundsbild elinstallation"
             className="w-full h-full object-cover object-center"
-            // sizes="(max-width: 640px) 100vw, 100vw"
+            decoding="async"
+            fetchpriority="high"
             style={{ position: "absolute", inset: 0, zIndex: 0 }}
           />
         </picture>
