@@ -24,15 +24,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#66BEF0]/20 to-transparent" aria-hidden="true" />
       </div>
-      {/* Decorative blobs */}
-      <div
-        className="absolute top-20 left-10 w-32 h-32 bg-[#66BEF0]/10 rounded-full blur-xl animate-pulse"
-        aria-hidden="true"
-      ></div>
-      <div
-        className="absolute bottom-20 right-10 w-48 h-48 bg-blue-400/10 rounded-full blur-2xl animate-pulse delay-1000"
-        aria-hidden="true"
-      ></div>
+      
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
