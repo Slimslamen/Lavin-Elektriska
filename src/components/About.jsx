@@ -28,9 +28,9 @@ const About = () => {
       subHtml: `Elcentral med mätare, säkringar och kabeldragning i ett teknikrum.`,
     },
     {
-      src: "/Images/Standing.webp",
-      thumb: "/Images/Standing.webp",
-      subHtml: `Person installerar eldragning i vägg under renovering.`,
+      src: "/Images/uteKablar.webp",
+      thumb: "/Images/uteKablar.webp",
+      subHtml: `Installation för lyckstolpe och laddbox.`,
     },
     {
       src: "/Images/Badrum.webp",

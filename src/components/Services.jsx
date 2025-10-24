@@ -7,13 +7,13 @@ const Services = () => {
       icon: <Home className="w-8 h-8 text-white" />,
       title: "Elinstallationer",
       description: "Dina elinstallationer uppdateras med den senaste tekniken och moderna lösningar för bästa resultat, anpassat för just dina behov och din vardag.",
-      bgImage: "/Images/Elinstallationer.webp"
+      bgImage: "/Images/VarnamoInstallation.webp"
     },
     {
       icon: <Zap className="w-8 h-8 text-white" />,
       title: "Installation av laddstolpar",
       description: "Noggrant utförda installationer av laddstolpar gör det enkelt att ladda elbilen snabbt, säkert och hållbart.",
-      bgImage: "/Images/chargingpole.jpg"
+      bgImage: "/Images/uteInstallation2.webp"
     },
     {
       icon: <Settings className="w-8 h-8 text-white" />,
