@@ -1,5 +1,5 @@
 import { Phone, CheckCircle, ArrowRight, ListChecks } from "lucide-react";
-import { MoneySend, TruckFast } from "iconsax-reactjs";
+// import { MoneySend, TruckFast } from "iconsax-astro";
 
 const Hero = () => {
   return (
@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#66BEF0]/20 to-transparent" aria-hidden="true" />
       </div>
-      
+
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
@@ -89,7 +89,13 @@ const Hero = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-[#66BEF0] rounded-lg flex items-center justify-center">
-                    <TruckFast size={27} color="#ffff" />
+                    {/* <TruckFast size={27} color="#ffff" /> */}
+                      <img
+                      src="/svg/truck-speed-svgrepo-com.svg"
+                      alt="truck speed icon"
+                      className="w-8 h-8"
+                      loading="eager"
+                    />
                   </div>
                   <div>
                     <p className="text-white font-semibold">Snabb respons</p>
@@ -98,7 +104,12 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-[#66BEF0] rounded-lg flex items-center justify-center">
-                    <MoneySend size={30} color="#ffff" />
+                    <img
+                      src="/svg/money-send-svgrepo-com.svg"
+                      alt="Money send icon"
+                      className="w-8 h-8"
+                      loading="eager"
+                    />
                   </div>
                   <div>
                     <p className="text-white font-semibold">Transparent prissättning</p>
@@ -107,7 +118,12 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-[#66BEF0] rounded-lg flex items-center justify-center">
-                    <ListChecks className="w-6 h-6 text-white" aria-hidden="true" />
+                    <img
+                      src="/svg/list-checks-svgrepo-com.svg"
+                      alt="list checks icon"
+                      className="w-8 h-8"
+                      loading="eager"
+                    />
                   </div>
                   <div>
                     <p className="text-white font-semibold">Kvalitetsgaranti</p>
