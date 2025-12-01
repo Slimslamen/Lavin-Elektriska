@@ -58,7 +58,7 @@ const CTA = () => {
             {typeof window !== "undefined" && document.getElementById("root") ? (
               <PopupButton
                 url="https://calendly.com/le-lavinelektriska"
-                rootElement={document.getElementById("root")}
+                rootElement={typeof window !== "undefined" ? (document.getElementById("__next") || document.body) : undefined}
                 text="Boka möte"
                 className="bg-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 aria-label="Boka möte via Calendly"

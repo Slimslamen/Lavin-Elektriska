@@ -58,7 +58,6 @@ button, #sendMessage {
   transition: border-color 0.25s;
 }
 button:hover, #sendMessage:hover {
-  border-color: #646cff;
   background-color: #22aeff;
 }
 button:focus,

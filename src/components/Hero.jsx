@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="absolute inset-0 w-full h-full max-w-full" aria-hidden="true">
         <picture>
           {/* Mobile (portrait / tighter crop). You can swap to another asset if desired. */}
-          <source media="(max-width: 640px)" type="image/webp" srcSet="/Images/Central.webp" />
+          <source media="(max-width: 640px)" type="image/webp" srcSet="/Images/mobileHeader.webp" />
           {/* Desktop / larger screens */}
           <source media="(min-width: 641px)" type="image/webp" srcSet="/Images/HeroImg.webp" />
           {/* Fallback img element */}

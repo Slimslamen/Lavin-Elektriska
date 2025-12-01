@@ -28,8 +28,8 @@ const About = () => {
       subHtml: `Elcentral med mätare, säkringar och kabeldragning i ett teknikrum.`,
     },
     {
-      src: "/Images/uteKablar.webp",
-      thumb: "/Images/uteKablar.webp",
+      src: "/Images/uteInstallation.webp",
+      thumb: "/Images/uteInstallation.webp",
       subHtml: `Installation för lyckstolpe och laddbox.`,
     },
     {
@@ -57,7 +57,7 @@ const About = () => {
     <section id="about" className="py-20 bg-white" aria-label="Om Lavin Elektriska">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          <div className="animate-fade-in w-full max-w-xl mx-auto lg:mx-0">
+          <div className="animate-fade-in w-full max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Om Lavin Elektriska</h2>
             <p className="text-lg text-gray-600 mb-6">
               Lavin Elektriska grundades i Småland och har idag sin bas i Västra Götaland. Med över lång erfarenhet i
