@@ -5,6 +5,8 @@ import SecondHeader from "../components/SeconHeader";
 
 const NotFound = () => {
 
+
+  // New update
   return (
     <>
       <SecondHeader />
