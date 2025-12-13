@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 const Carousel = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Sample images with 6 landscape and 3 portrait per page
   const allImages = [
@@ -37,11 +38,17 @@ const Carousel = () => {
   };
 
   const handlePrevious = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+    setTimeout(() => setIsTransitioning(false), 300);
   };
 
   const handleNext = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
+    setTimeout(() => setIsTransitioning(false), 300);
   };
 
   const currentImages = getCurrentImages();
@@ -69,7 +76,11 @@ const Carousel = () => {
           </button>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[1200px] md:h-[600px]">
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[200px] sm:auto-rows-[1fr] lg:auto-rows-[1fr] h-auto sm:h-[520px] lg:h-[600px] transition-all duration-300 ${
+              isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+            }`}
+          >
             {/* Landscape - Large */}
             <div
               className="col-span-2 row-span-2 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
@@ -234,6 +245,7 @@ const Carousel = () => {
   )
 }
     </div>
+    
   );
 };
 
