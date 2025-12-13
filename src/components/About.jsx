@@ -1,62 +1,14 @@
-import LightGallery from "lightgallery/react";
-import lgThumbnail from "lightgallery/plugins/thumbnail";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
+import Carousel from "./Carousel";
 
 const About = () => {
 
-  const dynamicEl = [
-    {
-      src: "/Images/GolvVarme.webp",
-      thumb: "/Images/GolvVarme.webp",
-      subHtml: `Rum under renovering med golvvärmeslingor installerade.`,
-    },
-    {
-      src: "/Images/Rum.webp",
-      thumb: "/Images/Rum.webp",
-      subHtml: `Renoverat rum med trägolv, grå träpanel och vitmålat tak med mörka balkar.`,
-    },
-    {
-      src: "/Images/ElMatning.webp",
-      thumb: "/Images/ElMatning.webp",
-      subHtml: `Elektriker testar elcentral med mätinstrument.`,
-    },
-    {
-      src: "/Images/ElCentral.webp",
-      thumb: "/Images/ElCentral.webp",
-      subHtml: `Elcentral med mätare, säkringar och kabeldragning i ett teknikrum.`,
-    },
-    {
-      src: "/Images/uteInstallation.webp",
-      thumb: "/Images/uteInstallation.webp",
-      subHtml: `Installation för lyckstolpe och laddbox.`,
-    },
-    {
-      src: "/Images/Badrum.webp",
-      thumb: "/Images/Badrum.webp",
-      subHtml: `Badrum under renovering med ny kaklad vägg, toalett och handfat.`,
-    },
-      {
-      src: "/Images/ElCentralArbete.webp",
-      thumb: "/Images/ElCentralArbete.webp",
-      subHtml: `Arbete på elcentral med säkringar och anslutna kablar.`,
-    },
-    {
-      src: "/Images/VagUttagNara.webp",
-      thumb: "/Images/VagUttagNara.webp",
-      subHtml: `Elektriker installerar ett dubbelt vägguttag.`,
-    },
-    {
-      src: "/Images/ElHandskning.webp",
-      thumb: "/Images/ElHandskning.webp",
-      subHtml: `Öppen elcentral med säkringar, kablar och anslutningar.`,
-    },
-  ];
   return (
     <section id="about" className="py-20 bg-white" aria-label="Om Lavin Elektriska">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-3 gap-0 md:gap-12 lg:gap-24 items-center md:items-start">
           <div className="animate-fade-in w-full max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Om Lavin Elektriska</h2>
             <p className="text-lg text-gray-600 mb-6">
@@ -81,32 +33,9 @@ const About = () => {
             </div>
           </div>
 
-          <div className="animate-fade-in">
+          <div className="animate-fade-in col-span-2">
             <div aria-label="Företagsbilder">
-              <LightGallery
-                plugins={[lgThumbnail]}
-                elementClassNames="grid grid-cols-1 sm:grid-cols-3 gap-3 auto-rows-[150px] md:auto-rows-auto"
-                speed={400}
-                controls={false}
-              >
-                {dynamicEl.map((it, i) => (
-                  <a
-                    key={i}
-                    href={it.src}
-                    className="group relative block overflow-hidden rounded-lg focus:outline-none focus:ring-2 focus:ring-[#66BEF0] max-w-full"
-                    aria-label={typeof it.subHtml === 'string' ? it.subHtml : 'Öppna bild'}                
-                  >
-                    <img
-                      src={it.thumb}
-                      alt={typeof it.subHtml === "string" ? it.subHtml : "Galleri bild"}
-                      loading="lazy"
-                      // sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 300px"
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <span className="pointer-events-none absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" aria-hidden="true" />
-                  </a>
-                ))}
-              </LightGallery>
+              <Carousel />
             </div>
           </div>
         </div>
