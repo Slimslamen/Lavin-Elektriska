@@ -33,7 +33,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="animate-fade-in col-span-2 max-h-[50vh]">
+          <div className="animate-fade-in col-span-2 md:max-h-[50vh]">
             <div aria-label="Företagsbilder">
               <Carousel />
             </div>
