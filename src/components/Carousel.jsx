@@ -24,20 +24,20 @@ const Carousel = () => {
   // Layout configurations for different pages
   const layouts = {
     page1: [
-      { col: 1, row: 2 }, // Large landscape
-      { col: 2, row: 2 }, // Portrait
-      { col: 1, row: 2 }, // Small landscape
-      { col: 1, row: 2 }, // Medium landscape
-      { col: 2, row: 2 }, // Portrait
-      { col: 1, row: 2 }, // Small landscape
+      { col: 1, row: 2 },
+      { col: 2, row: 2 },
+      { col: 1, row: 2 },
+      { col: 1, row: 2 },
+      { col: 2, row: 2 },
+      { col: 1, row: 2 },
     ],
     page2: [
-      { col: 1, row: 2 }, // Portrait
-      { col: 2, row: 1 }, // Medium landscape
-      { col: 1, row: 2 }, // Portrait
-      { col: 2, row: 1 }, // Small landscape
-      { col: 2, row: 1 }, // Portrait
-      { col: 2, row: 1 }, // Medium landscape
+      { col: 1, row: 2 },
+      { col: 2, row: 1 },
+      { col: 1, row: 2 },
+      { col: 2, row: 1 },
+      { col: 2, row: 1 },
+      { col: 2, row: 1 },
     ],
   };
 
@@ -99,10 +99,12 @@ const Carousel = () => {
           >
             {currentImages.map((image, index) => {
               const layout = currentLayout[index];
+              const colClass = layout?.col === 2 ? "sm:col-span-2 lg:col-span-2" : "sm:col-span-1 lg:col-span-1";
+              const rowClass = layout?.row === 2 ? "sm:row-span-2 lg:row-span-2" : "sm:row-span-1 lg:row-span-1";
               return (
                 <div
                   key={image.id}
-                  className={`col-span-2 md:col-span-${layout.col} row-span-${layout.row} relative overflow-hidden rounded-lg shadow-xl group cursor-pointer`}
+                  className={`col-span-1 row-span-1 ${colClass} ${rowClass} relative overflow-hidden rounded-lg shadow-xl group cursor-pointer`}
                   onClick={() => setSelectedImage(image)}
                 >
                   <img
@@ -136,7 +138,7 @@ const Carousel = () => {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
-          className="md:fixed hidden inset-0 bg-black/95 z-[1000] md:h-[65vh] md:flex items-center justify-center p-4 rounded-lg"
+          className="md:fixed hidden inset-0 bg-black/85 z-[1000] md:h-[60vh] md:flex items-center justify-center p-4 rounded-lg"
           onClick={() => setSelectedImage(null)}
           role="dialog"
           aria-modal="true"
