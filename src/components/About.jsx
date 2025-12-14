@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-white" aria-label="Om Lavin Elektriska">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-3 gap-0 md:gap-12 lg:gap-24 items-center md:items-start">
+        <div className="md:grid lg:grid-cols-3  md:gap-12 lg:gap-24 items-center md:items-start">
           <div className="animate-fade-in w-full max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Om Lavin Elektriska</h2>
             <p className="text-lg text-gray-600 mb-6">
@@ -33,7 +33,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="animate-fade-in col-span-2">
+          <div className="animate-fade-in col-span-2 max-h-[50vh]">
             <div aria-label="Företagsbilder">
               <Carousel />
             </div>

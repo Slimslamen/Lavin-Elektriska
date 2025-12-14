@@ -1,40 +1,56 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { createPortal } from "react-dom";
 
 const Carousel = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Sample images with 6 landscape and 3 portrait per page
   const allImages = [
-    { id: 1, url: "/Images/uteInstallation.webp"},
-    { id: 2, url: "/Images/Rum.webp"},
-    { id: 3, url: "/Images/ElMatning.webp"},
-    { id: 4, url: "/Images/ElCentral.webp"},
-    { id: 5, url: "/Images/GolvVarme.webp"},
-    { id: 6, url: "/Images/Badrum.webp"},
-    { id: 7, url: "/Images/ElCentralArbete.webp"},
-    { id: 8, url: "/Images/VagUttagNara.webp"},
-    { id: 9, url: "/Images/ElHandskning.webp"},
-    { id: 18, url: "/Images/ElHandskning.webp"},
-    { id: 10, url: "/Images/GolvVarme.webp"},
-    { id: 12, url: "/Images/ElMatning.webp"},
-    { id: 13, url: "/Images/ElCentral.webp"},
-    { id: 16, url: "/Images/ElCentralArbete.webp"},
-    { id: 14, url: "/Images/uteInstallation.webp"},
-    { id: 15, url: "/Images/Badrum.webp"},
-    { id: 17, url: "/Images/VagUttagNara.webp"},
-    { id: 11, url: "/Images/Rum.webp"},
+    { id: 2, url: "/Images/Rum.webp" },
+    { id: 1, url: "/Images/ButiksBild.webp" },
+    { id: 3, url: "/Images/ElMatning.webp" },
+    { id: 4, url: "/Images/Grönuttag.webp" },
+    { id: 6, url: "/Images/Ställarbete.webp" },
+    { id: 5, url: "/Images/Golvrenovering.webp" },
+    { id: 8, url: "/Images/Köksbild.webp" },
+    { id: 7, url: "/Images/uteInstallation.webp" },
+    { id: 9, url: "/Images/VägUttagNära.webp" },
+    { id: 10, url: "/Images/ElCentral.webp" },
+    { id: 11, url: "/Images/SpikaBetong.webp" },
+    { id: 12, url: "/Images/Badrum.webp" },
   ];
 
-  const imagesPerPage = 9;
+  // Layout configurations for different pages
+  const layouts = {
+    page1: [
+      { col: 1, row: 2 }, // Large landscape
+      { col: 2, row: 2 }, // Portrait
+      { col: 1, row: 2 }, // Small landscape
+      { col: 1, row: 2 }, // Medium landscape
+      { col: 2, row: 2 }, // Portrait
+      { col: 1, row: 2 }, // Small landscape
+    ],
+    page2: [
+      { col: 1, row: 2 }, // Portrait
+      { col: 2, row: 1 }, // Medium landscape
+      { col: 1, row: 2 }, // Portrait
+      { col: 2, row: 1 }, // Small landscape
+      { col: 2, row: 1 }, // Portrait
+      { col: 2, row: 1 }, // Medium landscape
+    ],
+  };
+
+  const imagesPerPage = 6;
   const totalPages = Math.ceil(allImages.length / imagesPerPage);
 
   const getCurrentImages = () => {
     const start = currentPage * imagesPerPage;
     return allImages.slice(start, start + imagesPerPage);
+  };
+
+  const getCurrentLayout = () => {
+    return currentPage === 0 ? layouts.page1 : layouts.page2;
   };
 
   const handlePrevious = () => {
@@ -52,27 +68,27 @@ const Carousel = () => {
   };
 
   const currentImages = getCurrentImages();
+  const currentLayout = getCurrentLayout();
 
   return (
     <div className="min-h-screen p-8">
       <div className="max-w-7xl mx-auto">
-
         <div className="relative">
           {/* Navigation Buttons */}
           <button
             onClick={handlePrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-95 w-20 h-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-95 w-10 h-10"
             aria-label="Previous images"
           >
-            <ChevronLeft className="w-6 h-6 absolute left-2 top-1/4 text-white" />
+            <ChevronLeft className="w-6 h-6 absolute left-1 top-1/5 text-white" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200 hover:scale-95 w-20 h-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200 hover:scale-95 w-10 h-10"
             aria-label="Next images"
           >
-            <ChevronRight className="w-6 h-6 absolute right-2 top-1/4 text-white" />
+            <ChevronRight className="w-6 h-6 absolute right-1 top-1/5 text-white" />
           </button>
 
           {/* Gallery Grid */}
@@ -81,122 +97,23 @@ const Carousel = () => {
               isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
             }`}
           >
-            {/* Landscape - Large */}
-            <div
-              className="col-span-2 row-span-2 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
-              onClick={() => setSelectedImage(currentImages[0])}
-            >
-              <img
-                src={currentImages[0]?.url}
-                alt="Gallery image 1"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            </div>
-
-            {/* Landscape - Small */}
-            <div
-              className="col-span-2 row-span-2 md:col-span-1 md:row-span-1 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
-              onClick={() => setSelectedImage(currentImages[1])}
-            >
-              <img
-                src={currentImages[1]?.url}
-                alt="Gallery image 2"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            </div>
-
-            {/* Portrait */}
-            <div
-              className="col-span-2 md:col-span-1 row-span-2 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
-              onClick={() => setSelectedImage(currentImages[2])}
-            >
-              <img
-                src={currentImages[2]?.url}
-                alt="Gallery image 3"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            </div>
-
-            {/* Landscape - Small */}
-            <div
-              className="col-span-2 row-span-2 md:col-span-1 md:row-span-1 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
-              onClick={() => setSelectedImage(currentImages[3])}
-            >
-              <img
-                src={currentImages[3]?.url}
-                alt="Gallery image 4"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            </div>
-
-            {/* Portrait */}
-            <div
-              className="col-span-2 md:col-span-1 row-span-2 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
-              onClick={() => setSelectedImage(currentImages[4])}
-            >
-              <img
-                src={currentImages[4]?.url}
-                alt="Gallery image 5"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            </div>
-
-            {/* Landscape - Medium */}
-            <div
-              className="col-span-2 row-span-2 md:row-span-1 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
-              onClick={() => setSelectedImage(currentImages[5])}
-            >
-              <img
-                src={currentImages[5]?.url}
-                alt="Gallery image 6"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            </div>
-
-            {/* Portrait */}
-            <div
-              className="col-span-2 md:col-span-1 row-span-2 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
-              onClick={() => setSelectedImage(currentImages[6])}
-            >
-              <img
-                src={currentImages[6]?.url}
-                alt="Gallery image 7"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            </div>
-
-            {/* Landscape - Small */}
-            <div
-              className="col-span-2 row-span-2 md:col-span-1 md:row-span-1 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
-              onClick={() => setSelectedImage(currentImages[7])}
-            >
-              <img
-                src={currentImages[7]?.url}
-                alt="Gallery image 8"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            </div>
-
-            {/* Landscape - Small */}
-            <div
-              className="col-span-2 row-span-2 md:col-span-1 md:row-span-1 relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
-              onClick={() => setSelectedImage(currentImages[8])}
-            >
-              <img
-                src={currentImages[8]?.url}
-                alt="Gallery image 9"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            </div>
+            {currentImages.map((image, index) => {
+              const layout = currentLayout[index];
+              return (
+                <div
+                  key={image.id}
+                  className={`col-span-2 md:col-span-${layout.col} row-span-${layout.row} relative overflow-hidden rounded-lg shadow-xl group cursor-pointer`}
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <img
+                    src={image.url}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -217,35 +134,31 @@ const Carousel = () => {
       </div>
 
       {/* Lightbox Modal */}
- {selectedImage &&
-  createPortal(
-    <div
-      className="fixed inset-0 bg-black/90 z-[1000] flex items-center justify-center p-4"
-      onClick={() => setSelectedImage(null)}
-      role="dialog"
-      aria-modal="true"
-      aria-label="Bildförhandsvisning"
-    >
-      <button
-        onClick={() => setSelectedImage(null)}
-        className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 p-2 rounded-full transition-all duration-200 w-8 h-8 flex items-center justify-center"
-        aria-label="Stäng"
-      >
-        <X className="w-6 h-6 absolute text-white" />
-      </button>
+      {selectedImage && (
+        <div
+          className="md:fixed hidden inset-0 bg-black/95 z-[1000] md:h-[70vh] md:flex items-center justify-center p-4 rounded-lg"
+          onClick={() => setSelectedImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Bildförhandsvisning"
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 p-2 rounded-full transition-all duration-200 w-8 h-8 flex items-center justify-center"
+            aria-label="Stäng"
+          >
+            <X className="w-6 h-6 absolute text-white" />
+          </button>
 
-      <img
-        src={selectedImage.url}
-        alt="Förstorad bild"
-        className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      />
-    </div>,
-    document.body
-  )
-}
+          <img
+            src={selectedImage.url}
+            alt="Förstorad bild"
+            className="max-w-[95vw] max-h-[64vh] object-contain rounded-lg shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
-    
   );
 };
 

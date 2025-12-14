@@ -66,7 +66,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row md:justify-between justify-center text-center items-center">
           <p className="text-gray-400 text-center md:text-left">
-            ©2024 Lavin Elektriska AB.
+            ©2026 Lavin Elektriska AB.
           </p>
           <div className="mt-4 md:mt-0">
             <Link to="/Policy" className="text-gray-400 hover:text-[#66BEF0] transition-colors" aria-label="Sekretesspolicy">
