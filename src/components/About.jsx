@@ -2,6 +2,7 @@ import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import Carousel from "./Carousel";
+import Reveal from "./Reveal";
 
 const About = () => {
 
@@ -9,7 +10,7 @@ const About = () => {
     <section id="about" className="py-20 bg-white" aria-label="Om Lavin Elektriska">
       <div className="container mx-auto px-4">
         <div className="md:grid lg:grid-cols-3  md:gap-12 lg:gap-24 items-center md:items-start">
-          <div className="animate-fade-in w-full max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+          <Reveal direction="left" className="aboutText w-full max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Om Lavin Elektriska</h2>
             <p className="text-lg text-gray-600 mb-6">
               Lavin Elektriska grundades i Småland och har idag sin bas i Västra Götaland. Med över lång erfarenhet i
@@ -31,13 +32,13 @@ const About = () => {
               </div>
               <div className="bg-[#66BEF0] text-white px-4 py-2 rounded-full font-semibold">ELSÄK-FS kraven följs</div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="animate-fade-in col-span-2 md:max-h-[50vh]">
+          <Reveal direction="right" className="CarouselContainer col-span-2 md:max-h-[50vh]">
             <div aria-label="Företagsbilder">
               <Carousel />
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

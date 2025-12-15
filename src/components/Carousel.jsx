@@ -77,18 +77,18 @@ const Carousel = () => {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-95 w-10 h-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 md:-translate-x-2 -translate-x-8 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-95 w-10 md:h-10 h-96"
             aria-label="Previous images"
           >
-            <ChevronLeft className="w-6 h-6 absolute left-1 top-1/5 text-white" />
+            <ChevronLeft className="md:w-6 md:h-6 w-10 h-10 absolute left-0.5 md:left-1 top-44 md:top-1/5 text-white" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200 hover:scale-95 w-10 h-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 md:-translate-x-2 translate-x-8 z-10 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200 hover:scale-95 w-10 md:h-10 h-96"
             aria-label="Next images"
           >
-            <ChevronRight className="w-6 h-6 absolute right-1 top-1/5 text-white" />
+            <ChevronRight className="md:w-6 md:h-6 w-10 h-10 absolute right-0.5 md:right-1 top-44 md:top-1/5 text-white" />
           </button>
 
           {/* Gallery Grid */}

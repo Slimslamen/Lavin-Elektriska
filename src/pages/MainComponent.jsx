@@ -8,19 +8,34 @@ import Testimonials from "../components/Testimonials"
 import Contact from "../components/Contact"
 import CTA from "../components/CTA"
 import Footer from "../components/Footer"
+import Reveal from "../components/Reveal"
 
 function App() {
   return (
     <div>      
       <link rel="canonical" href="https://lavinelektriska.se"/>
         <Header />
-        <Hero />
-        <Services />
-        <Testimonials />
-        <About />
-        <FAQ />
-        <Contact />
-        <CTA />
+        <Reveal>
+          <Hero />
+        </Reveal>
+        <Reveal>
+          <Services />
+        </Reveal>
+        <Reveal>
+          <Testimonials />
+        </Reveal>
+        <Reveal>
+          <About />
+        </Reveal>
+        <Reveal>
+          <FAQ />
+        </Reveal>
+        <Reveal>
+          <Contact />
+        </Reveal>
+        <Reveal>
+          <CTA />
+        </Reveal>
         <Footer />
     </div>
   )

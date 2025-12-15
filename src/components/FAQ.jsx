@@ -78,7 +78,7 @@ const FAQ = () => {
   return (
     <section className="py-20 bg-gray-50" id="FAQ" aria-label="Vanliga frågor">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="HeadContainer text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Vanliga frågor</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Här hittar du svar på de mest vanliga frågorna om våra tjänster.

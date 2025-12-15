@@ -63,12 +63,6 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-        
-        {/* <div className="text-center mt-12">
-          <button className="bg-[#66BEF0] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#5aa8d4] transition-colors">
-            Se alla projekt
-          </button>
-        </div> */}
       </div>
     </section>
   );
