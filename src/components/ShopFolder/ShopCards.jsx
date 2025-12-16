@@ -4,7 +4,7 @@ export default function ShopCards({ bundle, onSelect }) {
     const Icon = bundle.icon;
     
   return (
-     <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-[40vh]">
+     <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-[60vh]">
       <div className="flex items-center gap-3 mb-4">
         <span className="w-12 h-12 rounded-xl bg-[#66bdf06f] flex items-center justify-center">
           <Icon className="w-6 h-6 text-[#66BEF0]" aria-hidden="true" />
