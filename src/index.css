@@ -29,7 +29,7 @@ a:not(#sendMessage) {
   font-weight: 500;
   text-decoration: inherit;
 }
-a:hover:not(#blogbtn, #sendMessage, #Offert, #ShopBtn) {
+a:hover:not(#blogbtn, #sendMessage, #Offert, #ShopBtn, #CallPhone) {
   color: #66BEF0;
 }
 
@@ -57,12 +57,8 @@ button:not(#CarouselBtn, .ShopClose, .ShopSpecific), #sendMessage {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover:not(.ShopClose), #sendMessage:hover {
+button:hover:not(.ShopClose, #sendMessage){
   background-color: #22aeff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
