@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [hidden, setHidden] = useState(false);
@@ -61,6 +62,9 @@ const Header = () => {
               <a href="#about" onClick={e => scrollToSection(e, 'about')} className="text-gray-900 hover:text-[#66BEF0] transition-colors" tabIndex="0">Erfarenhet</a>
               <a href="#FAQ" onClick={e => scrollToSection(e, 'FAQ')} className="text-gray-900 hover:text-[#66BEF0] transition-colors" tabIndex="0">FAQ</a>
               <a href="#CTA" onClick={e => scrollToSection(e, 'CTA')} className="text-gray-900 hover:text-[#66BEF0] transition-colors" tabIndex="0">Kontakt</a>
+              <Link to="/Shop" id='ShopBtn' className="text-white hover:scale-95 transition-all duration-300 transform bg-[#66BEF0] py-1 rounded-lg ml-5" tabIndex="0">
+                Shop
+              </Link>
               {/* <Link to="/Blog" id="#blogbtn" className="hover:text-gray-900 text-[#66BEF0] transition-colors" tabIndex="0" aria-label="Blogg">Blog</Link> */}
             </div>
           </div>

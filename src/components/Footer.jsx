@@ -69,7 +69,7 @@ const Footer = () => {
             ©2026 Lavin Elektriska AB.
           </p>
           <div className="mt-4 md:mt-0">
-            <Link to="/Policy" className="text-gray-400 hover:text-[#66BEF0] transition-colors" aria-label="Sekretesspolicy">
+            <Link to="/policyPage" className="text-gray-400 hover:text-[#66BEF0] transition-colors" aria-label="Sekretesspolicy">
               Sekretesspolicy
             </Link>
           </div>
