@@ -138,7 +138,7 @@ const Carousel = () => {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
-          className="md:fixed hidden inset-0 bg-black/85 z-[1000] md:h-[60vh] md:flex items-center justify-center p-4 rounded-lg"
+          className="md:fixed hidden inset-0 bg-black/85 z-[1000] md:h-[90vh] md:flex items-center justify-center p-4 rounded-lg"
           onClick={() => setSelectedImage(null)}
           role="dialog"
           aria-modal="true"
@@ -155,7 +155,7 @@ const Carousel = () => {
           <img
             src={selectedImage.url}
             alt="Förstorad bild"
-            className="max-w-[95vw] max-h-[55vh] object-contain rounded-lg shadow-2xl"
+            className="max-w-[95vw] max-h-[80vh] object-contain rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
         </div>
