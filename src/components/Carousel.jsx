@@ -7,7 +7,7 @@ const Carousel = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const allImages = [
-    { id: 2, url: "/Images/Rum.webp" },
+    { id: 2, url: "/Images/ArbeteKöksskåp.webp" },
     { id: 1, url: "/Images/ButiksBild.webp" },
     { id: 3, url: "/Images/ElMatning.webp" },
     { id: 4, url: "/Images/Grönuttag.webp" },

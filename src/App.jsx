@@ -15,7 +15,7 @@ function App() {
           {/* Testing */}
             <Route path="/" element={<Main />}/>
             <Route path="/policyPage" element={<Policy />}/>
-            <Route path="/Shop" element={<Shop />}/>
+            {/* <Route path="/Shop" element={<Shop />}/> */}
             {/* 404 catch-all */}
             <Route path="*" element={<NotFound />} />
         </Routes>
