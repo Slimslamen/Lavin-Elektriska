@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ServiceCards = () => {
   const [expandedCard, setExpandedCard] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.matchMedia("(max-width: 767px)").matches);
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile && expandedCard !== null) {
+      setExpandedCard(null);
+    }
+  }, [isMobile, expandedCard]);
 
   const services = [
     {
       id: 1,
       title: "Laddstolpar",
       image: "/Images/uteInstallation2.webp",
-      description: "Installation och service av laddstolpar för hem och företag.",
+      description: "Noggrant utförda installationer av laddstolpar gör det enkelt att ladda elbilen snabbt, säkert och hållbart.",
     },
     {
       id: 2,
@@ -26,7 +40,7 @@ const ServiceCards = () => {
       id: 4,
       title: "Felsökningar",
       image: "/Images/felsokningReparationer.webp",
-      description: "Snabb felsökning och åtgärd av elproblem.",
+      description: "Professionell felsökning och reparation av ditt elsystem, inklusive åtgärd av kortslutningar, strömavbrott och andra elektriska fel.",
     },
     {
       id: 5,
@@ -38,26 +52,44 @@ const ServiceCards = () => {
       id: 6,
       title: "Elinstallationer",
       image: "/Images/ElHandskning.webp",
-      description: "Installationer av alla möjliga slag..",
+      description: "Dina elinstallationer uppdateras med den senaste tekniken och moderna lösningar för bästa resultat, anpassat för just dina behov och din vardag.",
     },
   ];
 
   const handleCardClick = (id) => {
+    if (!isMobile) return; // Only allow toggle on mobile
     setExpandedCard(expandedCard === id ? null : id);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-8">
       <div className="max-w-6xl w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Våra tjänster</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Från enkla reparationer till komplexa installationer erbjuder vi omfattande 
+            elektriska tjänster för bostäder och kommersiella fastigheter.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center content">
           {services.slice(0,65).map((service, index) => (
             <div
               key={service.id}
               onClick={() => handleCardClick(service.id)}
+              onKeyDown={(e) => {
+                if (!isMobile) return;
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleCardClick(service.id);
+                }
+              }}
               data-expanded={expandedCard === service.id}
-              className={`group relative h-96 w-80 rounded-2xl overflow-hidden cursor-pointer shadow-lg transition-all duration-500 ease-out
-                ${expandedCard === service.id ? "h-[640px] z-50 md:h-80" : ""}
-                md:hover:w-[140%] md:hover:z-50
+              role={isMobile ? "button" : undefined}
+              tabIndex={isMobile ? 0 : -1}
+              aria-disabled={!isMobile}
+              className={`group relative h-96 md:w-[65vh] 2xl:w-[40vh] rounded-2xl overflow-hidden cursor-pointer md:cursor-default shadow-lg transition-all duration-500 ease-out
+                ${expandedCard === service.id ? "h-[640px] z-50 md:h-96" : ""}
+                md:hover:w-[120%] md:hover:z-50
                   `}
             >
               {/* Background Image */}
@@ -76,7 +108,7 @@ const ServiceCards = () => {
 
               {/* Hover/Active Description */}
               <p
-                className={`absolute left-6 right-6 bottom-20 text-white/95 text-sm md:text-base leading-snug transition-all duration-300
+                className={`absolute left-6 right-6 bottom-20 text-white/95 text-sm md:text-base leading-snug transition-all duration-300 w-5/6
                 ${expandedCard === service.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
                 md:group-hover:opacity-100 md:group-hover:translate-y-0`}
               >
