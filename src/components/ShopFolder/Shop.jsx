@@ -5,6 +5,7 @@ import ShopBundleConfigurator from "./ShopBundleConfigurator";
 import SecondHeader from "../../components/SeconHeader";
 import ShopCards from "./ShopCards";
 import Footer from "../Footer";
+import ShopConfirmationModal from "./ShopConfirmationModal";
 
 const BUNDLES = [
   {
@@ -59,6 +60,7 @@ const BUNDLES = [
 
 export default function Shop() {
   const [activeBundle, setActiveBundle] = useState(null);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   return (
     <div>
@@ -83,8 +85,19 @@ export default function Shop() {
           </div>
         </div>
 
-        {activeBundle && <ShopBundleConfigurator bundle={activeBundle} onClose={() => setActiveBundle(null)} />}
+        {activeBundle && (
+          <ShopBundleConfigurator
+            bundle={activeBundle}
+            onClose={() => setActiveBundle(null)}
+            onRequestQuote={() => {
+              setShowConfirmation(true);
+            }}
+          />
+        )}
       </div>
+      {showConfirmation && (
+        <ShopConfirmationModal onClose={() => setShowConfirmation(false)} />
+      )}
       <Footer />
     </div>
   );

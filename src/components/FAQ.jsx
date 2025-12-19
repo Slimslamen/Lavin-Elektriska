@@ -106,85 +106,85 @@ const FAQ = () => {
                   )}
                 </div>
               </button>
-              {openIndex === index && (
-                <div
-                  id={`faq-panel-${index}`}
-                  role="region"
-                  aria-labelledby={`faq-button-${index}`}
-                  className="bg-white p-6 rounded-b-xl shadow-inner text-gray-700"
-                >
-                  <p>{faq.answer1}</p>
-                  {faq.answer2 !== "" && faq.answer2.includes(";") ? (
-                    <div>
-                      <br />
-                      <ul className="list-disc pl-6">
-                        {faq.answer2.split(";").map((item, i) => {
-                          // If the item contains "kontakta en behörig elektriker", break it off and show separately
-                          const kontaktSplit = item.split(
-                            "Byta ett befintligt vägguttag eller en strömbrytare (max 16 A) -"
+              <div
+                id={`faq-panel-${index}`}
+                role="region"
+                aria-labelledby={`faq-button-${index}`}
+                aria-hidden={openIndex !== index}
+                className={`bg-white rounded-b-xl shadow-inner text-gray-700 overflow-hidden transition-all duration-300 ease-in-out ${
+                  openIndex === index ? "max-h-[1000px] opacity-100 p-6" : "max-h-0 opacity-0 p-0"
+                }`}
+              >
+                <p>{faq.answer1}</p>
+                {faq.answer2 !== "" && faq.answer2.includes(";") ? (
+                  <div>
+                    <br />
+                    <ul className="list-disc pl-6">
+                      {faq.answer2.split(";").map((item, i) => {
+                        const kontaktSplit = item.split(
+                          "Byta ett befintligt vägguttag eller en strömbrytare (max 16 A) -"
+                        );
+                        const ROTSplit = item.split(
+                          "ROT-ansökan hanteras åt dig, och avdraget syns direkt på fakturan."
+                        );
+                        const ElSplit = item.split(
+                          "Använd smarta uttag och timers för att stänga av apparater automatiskt och minska onödig standbyförbrukning."
+                        );
+                        if (kontaktSplit.length > 1) {
+                          return (
+                            <div key={i}>
+                              <li>
+                                {kontaktSplit[0].trim() +
+                                  "Byta ett befintligt vägguttag eller en strömbrytare (max 16 A)"}
+                              </li>
+                              <div className="mt-4" />
+                              <p>
+                                {
+                                  "Kom ihåg att alltid bryta strömmen innan du börjar och kontrollera ditt arbete. Är du minsta osäker, kontakta en behörig elektriker."
+                                }
+                              </p>
+                            </div>
                           );
-                          const ROTSplit = item.split(
-                            "ROT-ansökan hanteras åt dig, och avdraget syns direkt på fakturan."
+                        }
+                        if (ROTSplit.length > 1) {
+                          return (
+                            <div key={i}>
+                              <div className="mt-4" />
+                              <p>
+                                {
+                                  "ROT-ansökan hanteras åt dig, och avdraget syns direkt på fakturan. Trygg el och mer pengar kvar i plånboken."
+                                }
+                              </p>
+                            </div>
                           );
-                          const ElSplit = item.split(
-                            "Använd smarta uttag och timers för att stänga av apparater automatiskt och minska onödig standbyförbrukning."
+                        }
+                        if (ElSplit.length > 1) {
+                          return (
+                            <div key={i}>
+                              <li>
+                                {ElSplit[0].trim() +
+                                  "Använd smarta uttag och timers för att stänga av apparater automatiskt och minska onödig standbyförbrukning."}
+                              </li>
+                              <div className="mt-4" />
+                              <p>
+                                {
+                                  "Små justeringar kan ge stora besparingar, och resultatet syns redan på nästa elräkning."
+                                }
+                              </p>
+                            </div>
                           );
-                          if (kontaktSplit.length > 1) {
-                            return (
-                              <div key={i}>
-                                <li>
-                                  {kontaktSplit[0].trim() +
-                                    "Byta ett befintligt vägguttag eller en strömbrytare (max 16 A)"}
-                                </li>
-                                <div className="mt-4" />
-                                <p>
-                                  {
-                                    "Kom ihåg att alltid bryta strömmen innan du börjar och kontrollera ditt arbete. Är du minsta osäker, kontakta en behörig elektriker."
-                                  }
-                                </p>
-                              </div>
-                            );
-                          }
-                          if (ROTSplit.length > 1) {
-                            return (
-                              <div key={i}>
-                                <div className="mt-4" />
-                                <p>
-                                  {
-                                    "ROT-ansökan hanteras åt dig, och avdraget syns direkt på fakturan. Trygg el och mer pengar kvar i plånboken."
-                                  }
-                                </p>
-                              </div>
-                            );
-                          }
-                          if (ElSplit.length > 1) {
-                            return (
-                              <div key={i}>
-                                <li>
-                                  {ElSplit[0].trim() +
-                                    "Använd smarta uttag och timers för att stänga av apparater automatiskt och minska onödig standbyförbrukning."}
-                                </li>
-                                <div className="mt-4" />
-                                <p>
-                                  {
-                                    "Små justeringar kan ge stora besparingar, och resultatet syns redan på nästa elräkning."
-                                  }
-                                </p>
-                              </div>
-                            );
-                          }
-                          return <li key={i}>{item}</li>;
-                        })}
-                      </ul>
-                    </div>
-                  ) : (
-                    <div>
-                      <br />
-                      <p>{faq.answer2}</p>
-                    </div>
-                  )}
-                </div>
-              )}
+                        }
+                        return <li key={i}>{item}</li>;
+                      })}
+                    </ul>
+                  </div>
+                ) : (
+                  <div>
+                    <br />
+                    <p>{faq.answer2}</p>
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>

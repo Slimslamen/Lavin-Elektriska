@@ -9,7 +9,7 @@ const Carousel = () => {
   const allImages = [
     { id: 2, url: "/Images/ArbeteKöksskåp.webp" },
     { id: 1, url: "/Images/ButiksBild.webp" },
-    { id: 3, url: "/Images/ElMatning.webp" },
+    { id: 3, url: "/Images/ElCentralArbete.webp" },
     { id: 4, url: "/Images/Grönuttag.webp" },
     { id: 6, url: "/Images/Ställarbete.webp" },
     { id: 5, url: "/Images/Golvrenovering.webp" },

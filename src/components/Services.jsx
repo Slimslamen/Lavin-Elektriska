@@ -1,31 +1,69 @@
-
-import { Zap, Home, Building, Settings, AlertTriangle, Lightbulb } from 'lucide-react';
+import React, { useEffect, useState } from "react";
 
 const Services = () => {
+  const [expandedCard, setExpandedCard] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.matchMedia("(max-width: 767px)").matches);
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile && expandedCard !== null) {
+      setExpandedCard(null);
+    }
+  }, [isMobile, expandedCard]);
+
   const services = [
     {
-      icon: <Home className="w-8 h-8 text-white" />,
-      title: "Elinstallationer",
-      description: "Dina elinstallationer uppdateras med den senaste tekniken och moderna lösningar för bästa resultat, anpassat för just dina behov och din vardag.",
-      bgImage: "/Images/VarnamoInstallation.webp"
-    },
-    {
-      icon: <Zap className="w-8 h-8 text-white" />,
-      title: "Installation av laddstolpar",
+      id: 1,
+      title: "Laddstolpar",
+      image: "/Images/uteInstallation2.webp",
       description: "Noggrant utförda installationer av laddstolpar gör det enkelt att ladda elbilen snabbt, säkert och hållbart.",
-      bgImage: "/Images/uteInstallation2.webp"
     },
     {
-      icon: <Settings className="w-8 h-8 text-white" />,
-      title: "Felsökningar & reparationer",
+      id: 2,
+      title: "Byggström",
+      image: "/Images/byggström.jpg",
+      description: "Tillfälliga och säkra elinstallationer för byggarbetsplatser, anpassade efter projektets behov och gällande krav.",
+    },
+    {
+      id: 3,
+      title: "Elbesiktning",
+      image: "/Images/ElMatning.webp",
+      description: "Noggrann elbesiktning som säkerställer att installationer uppfyller gällande säkerhetskrav och fungerar som de ska.",
+    },
+    {
+      id: 4,
+      title: "Felsökningar",
+      image: "/Images/felsokningReparationer.webp",
       description: "Professionell felsökning och reparation av ditt elsystem, inklusive åtgärd av kortslutningar, strömavbrott och andra elektriska fel.",
-      bgImage: "/Images/felsokningReparationer.webp"
-    }
+    },
+    {
+      id: 5,
+      title: "Konsultation",
+      image: "/Images/uteKablar.webp",
+      description: "Rådgivning och planering för trygga, effektiva och hållbara el-lösningar anpassade efter dina behov.",
+    },
+       {
+      id: 6,
+      title: "Elinstallationer",
+      image: "/Images/ElCentralArbete.webp",
+      description: "Dina elinstallationer uppdateras med den senaste tekniken och moderna lösningar för bästa resultat, anpassat för just dina behov och din vardag.",
+    },
   ];
 
+  const handleCardClick = (id) => {
+    if (!isMobile) return; // Only allow toggle on mobile
+    setExpandedCard(expandedCard === id ? null : id);
+  };
+
   return (
-    <section id="services" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-8">
+      <div className="max-w-6xl w-full">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Våra tjänster</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -33,39 +71,54 @@ const Services = () => {
             elektriska tjänster för bostäder och kommersiella fastigheter.
           </p>
         </div>
-        
-        <div className="space-y-8">
-          {services.map((service, index) => (
-            <div key={index} className={`grid lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-2 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-              {/* Text Content */}
-              <div className={`bg-[#66BEF0] text-white p-12 flex items-center ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div>
-                  <div className="w-16 h-16 bg-[#22aeff] bg-opacity-20 rounded-lg flex items-center justify-center mb-6">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-3xl font-bold mb-6">{service.title}</h3>
-                  <p className="text-lg leading-relaxed opacity-90">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-              
-              {/* Image */}
-              <div 
-                className={`min-h-[400px] bg-cover bg-center ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}
-                style={{ backgroundImage: `url(${service.bgImage})` }}
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:gap-20 gap-8 justify-items-center content">
+          {services.slice(0,65).map((service) => (
+            <div
+              key={service.id}
+              onClick={() => handleCardClick(service.id)}
+              onKeyDown={(e) => {
+                if (!isMobile) return;
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleCardClick(service.id);
+                }
+              }}
+              data-expanded={expandedCard === service.id}
+              role={isMobile ? "button" : undefined}
+              tabIndex={isMobile ? 0 : -1}
+              aria-disabled={!isMobile}
+              className={`group relative h-96 md:w-[65vh] 2xl:w-[50vh] rounded-2xl overflow-hidden cursor-pointer md:cursor-default shadow-lg transition-all duration-500 ease-out
+                ${expandedCard === service.id ? "h-[640px] z-50 md:h-96" : ""}
+                md:hover:w-[120%] md:hover:z-50
+                  `}
+            >
+              {/* Background Image */}
+              <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover" />
+
+              {/* Overlay with blur */}
+              <div
+                className={`absolute inset-0 transition-all duration-500
+                ${expandedCard === service.id ? "bg-black/20 backdrop-blur-none" : "bg-black/40 backdrop-blur-sm"}
+                md:hover:backdrop-blur-none md:hover:bg-black/20
+              `}
               />
+
+              {/* Hover/Active Description */}
+              <p
+                className={`absolute left-6 right-6 bottom-20 text-white/95 text-lg md:text-base leading-snug transition-all duration-300 w-5/6
+                ${expandedCard === service.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
+                md:group-hover:opacity-100 md:group-hover:translate-y-0`}
+              >
+                {service.description}
+              </p>
+
+              {/* Title */}
+              <div className="absolute bottom-6 left-6 text-white font-semibold text-2xl">{service.title}</div>
             </div>
           ))}
         </div>
-        
-        {/* <div className="text-center mt-16">
-          <button className="bg-[#66BEF0] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#5aa8d4] transition-colors">
-            Se alla tjänster
-          </button>
-        </div> */}
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -45,14 +45,17 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         {/* Main navigation */}
-        <nav className="" aria-label="Huvudnavigation">
+        <nav className="hidden sm:block" aria-label="Huvudnavigation">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
+              <div className="md:w-52 mr-5">
+                <h1 className="text-[#66BEF0] archivo-black-regular md:block">LAVIN</h1>
+              </div>
               <div className="md:w-40 mt-2 rounded-lg flex items-center justify-center md:ml-0">
                 <img src="/Images/LE.png" alt="Lavin Elektriska logotyp" loading='eager' className="rounded-[80px] mb-2" />
               </div>
               <div className="ml-5">
-                <h1 className="text-gray-900 archivo-black-regular md:block">LAVIN ELEKTRISKA</h1>
+                <h1 className="text-[#66BEF0] archivo-black-regular md:block">ELEKTRISKA</h1>
               </div>
             </div>
             

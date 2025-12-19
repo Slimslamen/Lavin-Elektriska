@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { X, Check, Minus, Plus } from "lucide-react";
 
-export default function ShopBundleConfigurator({ bundle, onClose }) {
+export default function ShopBundleConfigurator({ bundle, onClose, onRequestQuote }) {
   const [selected, setSelected] = useState(() => new Set());
   const closeBtnRef = useRef(null);
 
@@ -153,9 +153,14 @@ export default function ShopBundleConfigurator({ bundle, onClose }) {
                 <Plus className="w-4 h-4" /> Kopiera
               </button> */}
               <a
-                href="/#contact"
+                href="#"
                 className="col-span-2 mt-1 inline-flex items-center justify-center py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors focus:outline-none"
                 aria-label="Begär offert via kontaktformuläret"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onRequestQuote) onRequestQuote();
+                  if (onClose) onClose();
+                }}
               >
                 Begär offert
               </a>
