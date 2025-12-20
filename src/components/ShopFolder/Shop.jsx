@@ -65,17 +65,29 @@ export default function Shop() {
   return (
     <div>
       <SecondHeader />
-      <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <Reveal>
-            <header className="text-center mb-12">
-              <h1 className="text-4xl font-bold text-gray-900 mb-3">Välj paket och anpassa</h1>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+      <div className="static h-[130rem]  md:h-[60rem] pb-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="Moviebg relative min-h-[20rem] md:min-h-[35rem] mb-12 overflow-hidden">
+          <video
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            src="/Videos/TestVid2.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+          />
+
+          <Reveal className="relative z-10">
+            <header className="text-center px-4 py-12 md:py-20">
+              <h1 className="text-4xl font-bold text-gray-50 drop-shadow mb-3">Välj paket och anpassa</h1>
+              <p className="text-gray-100/90 max-w-2xl mx-auto drop-shadow">
                 Tre färdiga el‑paket som du kan skräddarsy med valfria produkter. Perfekt för att planera en offert.
               </p>
             </header>
           </Reveal>
 
+        </div>
+        <div className="absolute left-1/2 -translate-x-1/2 top-[28rem] max-w-7xl w-full px-4">
           <div className="grid md:grid-cols-3 gap-8">
             {BUNDLES.map((b) => (
               <Reveal key={b.id}>
@@ -95,9 +107,7 @@ export default function Shop() {
           />
         )}
       </div>
-      {showConfirmation && (
-        <ShopConfirmationModal onClose={() => setShowConfirmation(false)} />
-      )}
+      {showConfirmation && <ShopConfirmationModal onClose={() => setShowConfirmation(false)} />}
       <Footer />
     </div>
   );

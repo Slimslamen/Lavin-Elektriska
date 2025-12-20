@@ -46,7 +46,7 @@ h1 {
   line-height: 1.1;
 }
 
-button:not(#CarouselBtn, .ShopClose, .ShopSpecific), #sendMessage {
+button:not(#CarouselBtn, .ShopClose, .ShopSpecific, .ConfirmationBtn), #sendMessage {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -57,7 +57,7 @@ button:not(#CarouselBtn, .ShopClose, .ShopSpecific), #sendMessage {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover:not(.ShopClose, #sendMessage){
+button:hover:not(.ShopClose, #sendMessage, .ConfirmationBtn){
   background-color: #22aeff;
 }
 
@@ -68,9 +68,6 @@ button:hover:not(.ShopClose, #sendMessage){
   }
   a:hover {
     color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }
 

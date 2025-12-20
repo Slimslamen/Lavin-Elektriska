@@ -43,7 +43,7 @@ const Header = () => {
       className={`bg-white shadow-sm sticky top-0 z-50 transform transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}
       role="banner"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         {/* Main navigation */}
         <nav className="hidden sm:block" aria-label="Huvudnavigation">
           <div className="flex items-center justify-between">

@@ -24,18 +24,7 @@ const CTA = () => {
           </p>
         </div>
         
-        <div className={`grid md:grid-cols-2 gap-6 max-w-4xl ${showContact ? 'my-[-40px]' : ''} mx-auto`}>
-          {/* <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Phone className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-3">Ring direkt</h3>
-            <p className="text-blue-100 mb-4">Snabb hjälp för akuta problem</p>
-            <button className="bg-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              +46729110256
-            </button>
-          </div> */}
-          
+        <div className={`grid md:grid-cols-2 gap-6 max-w-4xl ${showContact ? 'my-[-40px]' : ''} mx-auto`}>          
           <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
             <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4" aria-hidden="true">
               <FaRegMessage className="w-8 h-8 text-white" aria-hidden="true" />

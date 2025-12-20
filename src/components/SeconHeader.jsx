@@ -37,12 +37,15 @@ const Header = () => {
         {/* Main navigation */}
         <nav className="" aria-label="Huvudnavigation">
           <a href='/' className="flex items-center justify-between">
-            <div className="flex items-center">
-              <div className="md:w-40 mt-2 rounded-lg flex items-center justify-center md:ml-0">
-                <img src="/Images/LE.png" alt="Lavin Elektriska logotyp" loading='lazy' className="rounded-[80px] mb-2" />
+              <div className="flex items-center">
+              <div className="md:w-52 mr-[-7px]">
+                <h1 className="text-[#66BEF0] archivo-black-regular hidden md:block">LAVIN</h1>
+              </div>
+              <div className="w-50 md:w-30 mt-2 rounded-lg flex items-center justify-center ml-8 md:ml-0">
+                <img src="/Images/LE.png" alt="Lavin Elektriska logotyp" loading='eager' className="rounded-[80px] mb-2" />
               </div>
               <div className="ml-5">
-                <h1 className="text-gray-900 archivo-black-regular md:block">LAVIN ELEKTRISKA</h1>
+                <h1 className="text-[#66BEF0] archivo-black-regular hidden md:block">ELEKTRISKA</h1>
               </div>
             </div>
           </a>

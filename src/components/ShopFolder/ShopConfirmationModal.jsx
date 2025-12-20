@@ -26,7 +26,7 @@ export default function ShopConfirmationModal({ onClose }) {
       <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
 
       <div
-        className="relative z-10 w-[10rem] max-w-md bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 overflow-hidden"
+        className="relative z-10 w-[30rem] max-w-md bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <header className="flex items-center justify-between px-6 py-4 border-b bg-gradient-to-r from-gray-50 to-blue-50">

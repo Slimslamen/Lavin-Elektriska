@@ -126,18 +126,6 @@ const Contact = ({showContent}) => {
                   />
                 </div>
               </div>
-              {/* <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Typ av arbete</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#66BEF0] focus:border-transparent">
-                  <option>Välj typ av tjänst</option>
-                  <option>Residential Electrical</option>
-                  <option>Commercial Electrical</option>
-                  <option>Emergency Repair</option>
-                  <option>Panel Upgrade</option>
-                  <option>Lighting Installation</option>
-                  <option>Electrical Inspection</option>
-                </select>
-              </div> */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Meddelande</label>
                 <textarea 

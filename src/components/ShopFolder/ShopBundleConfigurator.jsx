@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { X, Check, Minus, Plus } from "lucide-react";
+import ShopForm from "./ShopForm";
 
 export default function ShopBundleConfigurator({ bundle, onClose, onRequestQuote }) {
   const [selected, setSelected] = useState(() => new Set());
@@ -34,22 +35,8 @@ export default function ShopBundleConfigurator({ bundle, onClose, onRequestQuote
 
   const atLimit = selected.size >= bundle.maxItems;
 
-  // const copySummary = async () => {
-  //   const lines = [
-  //     `${bundle.name} – grundpris: ${bundle.basePrice} kr`,
-  //     `Valda tillval (${selected.size}/${bundle.maxItems}):`,
-  //     ...bundle.items
-  //       .filter((i) => selected.has(i.id))
-  //       .map((i) => `• ${i.name} – ${i.price} kr`),
-  //     `Totalt uppskattat pris: ${total} kr`,
-  //   ];
-  //   try {
-  //     await navigator.clipboard.writeText(lines.join("\n"));
-  //     alert("Sammanfattning kopierad till urklipp.");
-  //   } catch {
-  //     /* no-op */
-  //   }
-  // };
+  
+
 
   return (
     <div
@@ -62,7 +49,7 @@ export default function ShopBundleConfigurator({ bundle, onClose, onRequestQuote
       <div className="absolute inset-0 bg-black/40" />
 
       <div
-        className="relative mx-auto mt-10 mb-6 max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden"
+        className="relative top-32 sm:top-auto mx-auto mt-10 mb-6 w-[23rem] sm:w-auto max-w-3xl bg-white rounded-2xl shadow-2xl sm:h-auto h-[40rem] overflow-auto sm:overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <header className="flex items-center justify-between px-6 py-4 border-b bg-gradient-to-r from-gray-50 to-blue-50">
@@ -139,32 +126,24 @@ export default function ShopBundleConfigurator({ bundle, onClose, onRequestQuote
 
             <div className="mt-4">
               <button
+                type="button"
                 onClick={() => setSelected(new Set())}
                 className="flex items-center justify-center gap-2 py-2 mb-2 rounded-lg text-white bg-white border hover:bg-gray-100 transition-all transform duration-300 hover:scale-95"
                 aria-label="Rensa val"
               >
                  Rensa
               </button>
-              {/* <button
-                onClick={copySummary}
-                className="flex items-center justify-center gap-2 py-2 rounded-lg bg-[#66BEF0] text-white hover:bg-[#22aeff] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#66BEF0] focus:ring-offset-white"
-                aria-label="Kopiera sammanfattning"
-              >
-                <Plus className="w-4 h-4" /> Kopiera
-              </button> */}
-              <a
-                href="#"
-                className="col-span-2 mt-1 inline-flex items-center justify-center py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors focus:outline-none"
-                aria-label="Begär offert via kontaktformuläret"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (onRequestQuote) onRequestQuote();
-                  if (onClose) onClose();
-                }}
-              >
-                Begär offert
-              </a>
             </div>
+
+            <ShopForm
+              bundle={bundle}
+              selectedIds={Array.from(selected)}
+              total={total}
+              onSuccess={({ name, phone, email, selected, total: t }) => {
+                onRequestQuote?.({ name, phone, email, selected, total: t, bundle: bundle.name });
+                onClose?.();
+              }}
+            />
           </aside>
         </div>
       </div>
